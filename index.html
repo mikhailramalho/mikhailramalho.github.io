@@ -19,7 +19,7 @@
 
 	<!-- main css -->
 	<link rel="stylesheet" href="./files/style.css">
-	
+
 	<!-- Early theme initialization - no localStorage, just system preference -->
 	<script>
 		// No early initialization needed since we're using CSS media queries only
@@ -113,14 +113,12 @@
 							<h4 style="margin-top: 25px;"><b>Recent Publications</b></h4>
 
 							<ul>
-								<li><a href="https://ieeexplore.ieee.org/document/9787818" target="_blank">Summary of
-										Model Checking C++ Programs</a>. In ICST, 2022.</li>
-								<li><a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/stvr.1793"
-										target="_blank">Model Checking C++ Programs</a>. In Softw Test Verif Reliab,
-									2022.</li>
-								<li><a href="https://dl.acm.org/doi/10.1145/3533767.3543289"
-										target="_blank">ESBMC-CHERI: towards verification of C programs for CHERI
-										platforms with ESBMC</a>. In ISSTA, 2022.</li>
+								<li><a href="https://link.springer.com/chapter/10.1007/978-3-031-90660-2_16"
+									target="_blank">ESBMC v7.7: Efficient Concurrent Software Verification with Scheduling, Incremental SMT and Partial Order Reduction</a>. In TACAS, 2025.</li>
+								<li><a href="https://www.sciencedirect.com/science/article/pii/S0167642325000759"
+									target="_blank">ESBMC v7.6: Enhanced model checking of C++ programs with clang AST</a>. Science of Computer Programming, 2025.</li>
+								<li><a href="https://link.springer.com/chapter/10.1007/978-3-031-57256-2_24"
+									target="_blank">ESBMC v7.4: Harnessing the Power of Intervals</a>. In TACAS, 2024.</li>
 							</ul>
 
 							<h4 style="margin-top: 25px;"><b>GitHub Contributions</b></h4>
@@ -243,7 +241,7 @@
 	<script src="./files/magnific-popup-options.js"></script>
 	<script src="./files/wow.min.js"></script>
 	<script src="./files/custom.js"></script>
-	
+
 	<!-- Theme Management Script -->
 	<script>
 		(function() {
@@ -251,15 +249,15 @@
 			function getCurrentTheme() {
 				const dataTheme = document.documentElement.getAttribute('data-theme');
 				if (dataTheme) return dataTheme;
-				
+
 				return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 			}
-			
+
 			// Update toggle button text based on current theme
 			function updateToggleButton() {
 				const toggleButton = document.getElementById('theme-toggle');
 				const currentTheme = getCurrentTheme();
-				
+
 				if (toggleButton) {
 					if (currentTheme === 'dark') {
 						toggleButton.innerHTML = '☀️ Light';
@@ -270,21 +268,21 @@
 					}
 				}
 			}
-			
+
 			// Toggle theme temporarily (no localStorage)
 			function toggleTheme() {
 				const currentTheme = getCurrentTheme();
 				const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-				
+
 				// Just set the attribute, don't save to localStorage
 				document.documentElement.setAttribute('data-theme', newTheme);
 				updateToggleButton();
 			}
-			
+
 			// Listen for system theme changes
 			function watchSystemTheme() {
 				const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-				
+
 				// Use the modern addEventListener method if available
 				if (mediaQuery.addEventListener) {
 					mediaQuery.addEventListener('change', function(e) {
@@ -300,12 +298,12 @@
 					});
 				}
 			}
-			
+
 			// Set up everything after DOM loads
 			document.addEventListener('DOMContentLoaded', function() {
 				watchSystemTheme();
 				updateToggleButton();
-				
+
 				// Add event listener to toggle button
 				const toggleButton = document.getElementById('theme-toggle');
 				if (toggleButton) {
