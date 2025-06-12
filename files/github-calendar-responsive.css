@@ -4,6 +4,39 @@
   --color-calendar-graph-day-L2-bg: #45a045;
   --color-calendar-graph-day-L3-bg: #047526;
   --color-calendar-graph-day-L4-bg: #0a4208;
+  --calendar-text-color: #aaa;
+}
+
+/* Light theme for GitHub calendar */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-calendar-graph-day-bg: #ebedf0;
+    --color-calendar-graph-day-L1-bg: #9be9a8;
+    --color-calendar-graph-day-L2-bg: #40c463;
+    --color-calendar-graph-day-L3-bg: #30a14e;
+    --color-calendar-graph-day-L4-bg: #216e39;
+    --calendar-text-color: #666;
+  }
+}
+
+/* Dark theme override when explicitly set */
+[data-theme="dark"] {
+  --color-calendar-graph-day-bg: #161b22;
+  --color-calendar-graph-day-L1-bg: #0e4429;
+  --color-calendar-graph-day-L2-bg: #006d32;
+  --color-calendar-graph-day-L3-bg: #26a641;
+  --color-calendar-graph-day-L4-bg: #39d353;
+  --calendar-text-color: #8b949e;
+}
+
+/* Light theme override when explicitly set */
+[data-theme="light"] {
+  --color-calendar-graph-day-bg: #ebedf0;
+  --color-calendar-graph-day-L1-bg: #9be9a8;
+  --color-calendar-graph-day-L2-bg: #40c463;
+  --color-calendar-graph-day-L3-bg: #30a14e;
+  --color-calendar-graph-day-L4-bg: #216e39;
+  --calendar-text-color: #666;
 }
 
 rect.ContributionCalendar-day[data-level='0'] {
@@ -41,7 +74,7 @@ rect.ContributionCalendar-day[data-level='4'] {
 .calendar-graph text.wday,
 .calendar-graph text.month {
     font-size: 10px;
-    fill: #aaa;
+    fill: var(--calendar-text-color);
 }
 
 .contrib-legend {
@@ -49,7 +82,7 @@ rect.ContributionCalendar-day[data-level='4'] {
     padding: 0 14px 10px 0;
     display: inline-block;
     float: right;
-    color:white
+    color: var(--text-primary)
 }
 
 .contrib-legend .legend {
@@ -59,7 +92,7 @@ rect.ContributionCalendar-day[data-level='4'] {
     position: relative;
     bottom: -1px;
     padding: 0;
-    color:white
+    color: var(--text-primary)
 }
 
 .contrib-legend .legend li {
@@ -70,7 +103,7 @@ rect.ContributionCalendar-day[data-level='4'] {
 
 .text-small {
     font-size: 12px;
-    color: white;
+    color: var(--text-primary);
 }
 
 .calendar-graph {
@@ -102,7 +135,7 @@ rect.ContributionCalendar-day[data-level='4'] {
     line-height: 1.3em;
     font-size: 24px;
     display: block;
-    color: white;
+    color: var(--text-primary);
 }
 
 .calendar img.spinner {
@@ -113,7 +146,7 @@ rect.ContributionCalendar-day[data-level='4'] {
 
 .monospace {
     text-align: center;
-    color: #000;
+    color: var(--text-primary);
     font-family: monospace;
 }
 
@@ -134,7 +167,7 @@ rect.ContributionCalendar-day[data-level='4'] {
 .left.text-muted {
     float: left;
     margin-left: 9px;
-    color: white;
+    color: var(--text-primary);
 }
 .left.text-muted a {
     color: #4078c0;
@@ -162,7 +195,7 @@ h2.f4.text-normal.mb-3 {
     z-index: 99999;
     padding: 10px;
     font-size: 12px;
-    color: white;
+    color: var(--text-primary);
     text-align: center;
     background: rgba(0,0,0,.85);
     border-radius: 3px;
@@ -170,7 +203,7 @@ h2.f4.text-normal.mb-3 {
     pointer-events: none;
 }
 .day-tooltip strong {
-    color: white;
+    color: var(--text-primary);
 }
 .day-tooltip.is-visible {
     display: block;
@@ -189,6 +222,6 @@ h2.f4.text-normal.mb-3 {
 }
 
 text.ContributionCalendar-label {
-    fill: #ccc;
+    fill: var(--calendar-text-color);
     font-size: 11px;
 }

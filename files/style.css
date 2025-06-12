@@ -31,13 +31,92 @@
 
 @import url('https://fonts.googleapis.com/css?family=Figtree');
 
+/* Light theme colors (default for browsers without preference) */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-muted: #888888;
+  --border-color: #e0e0e0;
+  --button-bg: #333333;
+  --button-hover: #555555;
+  --navbar-bg: #ffffff;
+  --navbar-text: #333333;
+  --navbar-link: #666666;
+  --preloader-bg: #f9f9f9;
+  --home-bg: #f8f9fa;
+  --social-icon-bg: #e9ecef;
+  --progress-bg: #f8f9fa;
+}
+
+/* Dark theme colors when system prefers dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #000000;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #999999;
+    --border-color: #333333;
+    --button-bg: #000000;
+    --button-hover: #3d3d3f;
+    --navbar-bg: #000000;
+    --navbar-text: #ffffff;
+    --navbar-link: #cccccc;
+    --preloader-bg: #000000;
+    --home-bg: #111111;
+    --social-icon-bg: #292929;
+    --progress-bg: #1a1a1a;
+  }
+}
+
+/* Dark theme override when explicitly set */
+[data-theme="dark"] {
+  --bg-primary: #000000;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #999999;
+  --border-color: #333333;
+  --button-bg: #000000;
+  --button-hover: #3d3d3f;
+  --navbar-bg: #000000;
+  --navbar-text: #ffffff;
+  --navbar-link: #cccccc;
+  --preloader-bg: #000000;
+  --home-bg: #111111;
+  --social-icon-bg: #292929;
+  --progress-bg: #1a1a1a;
+}
+
+/* Light theme override when explicitly set */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-muted: #888888;
+  --border-color: #e0e0e0;
+  --button-bg: #333333;
+  --button-hover: #555555;
+  --navbar-bg: #ffffff;
+  --navbar-text: #333333;
+  --navbar-link: #666666;
+  --preloader-bg: #f9f9f9;
+  --home-bg: #f8f9fa;
+  --social-icon-bg: #e9ecef;
+  --progress-bg: #f8f9fa;
+}
+
 body {
-  background: black;
+  background: var(--bg-primary);
   font-family: 'Figtree';
   font-style: normal;
   font-weight: 400;
   overflow-x: hidden;
-  color: white
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html,
@@ -115,9 +194,10 @@ span {
 -----------------------------------------*/
 
 .section-btn {
-  background: #000000;
+  background: var(--button-bg);
   border: none;
   border-radius: 100px;
+  color: var(--text-primary);
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 1.6px;
@@ -129,7 +209,7 @@ span {
 
 .section-btn:focus,
 .section-btn:hover {
-  background: #3d3d3f;
+  background: var(--button-hover);
 }
 
 /*---------------------------------------
@@ -170,7 +250,7 @@ footer {
 #counter,
 #contact,
 footer {
-  background: #f9f9f9;
+  background: var(--bg-secondary);
 }
 
 #about img,
@@ -179,8 +259,8 @@ footer {
 }
 
 #work {
-  border-top: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 #contact {
@@ -202,7 +282,7 @@ footer {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  background: none repeat scroll 0 0 #ffffff;
+  background: var(--preloader-bg);
 }
 
 .spinner {
@@ -221,8 +301,8 @@ footer {
   margin-top: -10px;
   margin-left: -10px;
   border-radius: 50%;
-  border: 1px solid #000000;
-  border-top-color: #f9f9f9;
+  border: 1px solid var(--text-primary);
+  border-top-color: var(--bg-secondary);
   animation: spinner .9s linear infinite;
 }
 
@@ -246,12 +326,13 @@ footer {
   border: none;
   margin-bottom: 0;
   padding-top: 22px;
-  color: black;
-  background: black;
+  color: var(--navbar-text);
+  background: var(--navbar-bg);
+  transition: background-color 0.3s ease;
 }
 
 .custom-navbar .navbar-brand {
-  color:white;
+  color: var(--navbar-text);
   font-weight: normal;
   font-size: 20px;
 }
@@ -259,7 +340,7 @@ footer {
 .custom-navbar .nav li a {
   font-size: 12px;
   font-weight: normal;
-  color: #454545;
+  color: var(--navbar-link);
   letter-spacing: 1px;
   -webkit-transition: all ease-in-out 0.4s;
   transition: all ease-in-out 0.4s;
@@ -269,7 +350,7 @@ footer {
 
 .custom-navbar .navbar-nav>li>a:hover,
 .custom-navbar .navbar-nav>li>a:focus {
-  background-color: black;
+  background-color: var(--navbar-bg);
 }
 
 .custom-navbar .navbar-nav li a:after {
@@ -285,13 +366,13 @@ footer {
 .custom-navbar .navbar-nav li a:hover:after,
 
 .custom-navbar .nav li.active>a:after {
-  background: #ffffff;
-  color: #ffffff;
+  background: var(--navbar-text);
+  color: var(--navbar-text);
   width: 100%;
 }
 
 .custom-navbar .nav li.active>a {
-  color: white;
+  color: var(--navbar-text);
   font-weight: bold;
 }
 .custom-navbar  {
@@ -300,7 +381,7 @@ footer {
 }
 
 .custom-navbar .icon-bar {
-  background: #000000;
+  background: var(--text-primary);
 }
 
 /*---------------------------------------
@@ -308,7 +389,7 @@ footer {
 -----------------------------------------*/
 
 .large-header {
-  background: #ffffff;
+  background: var(--home-bg);
   position: absolute;
   top: 0;
   right: 0;
@@ -317,7 +398,7 @@ footer {
 }
 
 #home {
-  background: #ffffff;
+  background: var(--home-bg);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -358,7 +439,7 @@ footer {
 #about .about-thumb-wrap h4:after {
   content: "";
   position: absolute;
-  background: #454545;
+  background: var(--text-secondary);
   width: 20%;
   height: 2px;
   top: 15px;
@@ -371,28 +452,28 @@ footer {
 -----------------------------------------*/
 
 #skill {
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--border-color);
   padding-top: 80px;
   padding-bottom: 60px;
 }
 
 .skill-thumb strong,
 .skill-thumb span {
-  color: #575757;
+  color: var(--text-muted);
   font-size: 16px;
   padding-bottom: 8px;
   display: inline-block;
 }
 
 .skill-thumb .progress {
-  background: #ffffff;
+  background: var(--progress-bg);
   border-radius: 5px;
   box-shadow: none;
   height: 4px;
 }
 
 .skill-thumb .progress-bar-primary {
-  background: #3d3d3f;
+  background: var(--button-hover);
 }
 
 /*---------------------------------------
@@ -400,7 +481,7 @@ footer {
 -----------------------------------------*/
 
 #team .team-thumb h2 {
-  color: #3d3d3f;
+  color: var(--button-hover);
   font-size: 25px;
   margin-top: 22px;
   margin-bottom: 0px;
@@ -426,7 +507,7 @@ footer {
 }
 
 #work .work-thumb:hover {
-  background: #ffffff;
+  background: var(--bg-primary);
   box-shadow: 0px 16px 22px 0px rgba(90, 91, 95, 0.3);
   top: -5px;
 }
@@ -441,7 +522,7 @@ footer {
 
 #contact .form-control {
   border: none;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--border-color);
   border-radius: 5px;
   box-shadow: none;
   font-size: 18px;
@@ -456,10 +537,10 @@ footer {
 }
 
 #contact button#submit {
-  background: #000000;
+  background: var(--button-bg);
   border: none;
   border-radius: 40px;
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: bold;
   height: 55px;
   padding-bottom: 10px;
@@ -467,8 +548,8 @@ footer {
 }
 
 #contact button#submit:hover {
-  background: #3d3d3f;
-  color: #ffffff;
+  background: var(--button-hover);
+  color: var(--text-primary);
 }
 
 /*---------------------------------------
@@ -492,29 +573,29 @@ footer .newsletter .form-control {
 }
 
 footer .newsletter .form-control:focus {
-  border-bottom-color: #f2f2f2;
+  border-bottom-color: var(--border-color);
 }
 
 footer .newsletter input {
   border: none;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--border-color);
   border-radius: 0px;
 }
 
 footer .newsletter button {
-  background: #ffffff;
+  background: var(--bg-primary);
   border: none;
   border-radius: 50px;
   font-weight: bold;
 }
 
 footer .newsletter button:hover {
-  background: #000000;
-  color: #ffffff;
+  background: var(--button-bg);
+  color: var(--text-primary);
 }
 
 footer .dash-line {
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--border-color);
   margin-top: 62px;
   padding-bottom: 52px;
   position: relative;
@@ -537,9 +618,9 @@ footer .dash-line {
 }
 
 .social-icon li a {
-  background: #292929;
+  background: var(--social-icon-bg);
   border-radius: 100%;
-  color: #ffffff;
+  color: var(--text-primary);
   cursor: pointer;
   font-size: 16px;
   text-decoration: none;
@@ -554,7 +635,7 @@ footer .dash-line {
 }
 
 .social-icon li a:hover {
-  background: #000000;
+  background: var(--button-bg);
   transform: scale(1.1);
 }
 
@@ -585,7 +666,7 @@ footer .dash-line {
   }
 
   .custom-navbar {
-    background-color: #ffffff;
+    background-color: var(--navbar-bg);
     box-shadow: 0 40px 100px rgba(0, 0, 0, .2);
     padding-top: 0px;
   }
