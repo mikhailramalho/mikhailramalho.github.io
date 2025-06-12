@@ -227,7 +227,7 @@
 			<div class="row">
 				<div class="wow col-md-6 col-sm-6" data-wow-delay="0.8s"
 					style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
-					<p class="copyright-text">Copyright © 2022 - Mikhail R. Gadelha</p>
+					<p class="copyright-text">Copyright © <span id="current-year">2022</span> - Mikhail R. Gadelha</p>
 					<p> mikhail (at) igalia (dot) com </p>
 				</div>
 			</div>
@@ -304,6 +304,12 @@
 			document.addEventListener('DOMContentLoaded', function() {
 				watchSystemTheme();
 				updateToggleButton();
+
+				// Update copyright year dynamically
+				const currentYearElement = document.getElementById('current-year');
+				if (currentYearElement) {
+					currentYearElement.textContent = new Date().getFullYear();
+				}
 
 				// Add event listener to toggle button
 				const toggleButton = document.getElementById('theme-toggle');
