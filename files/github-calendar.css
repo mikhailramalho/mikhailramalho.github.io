@@ -27,6 +27,8 @@
 
   table.ContributionCalendar-grid {
       margin-bottom: 0pt;
+      table-layout: auto !important;
+      width: fit-content !important;
   }
 
   table.ContributionCalendar-grid td {
@@ -51,7 +53,7 @@
   }
 
   .calendar {
-      width: 100%;
+      width: fit-content;
       max-width: 860px;
       background-color: var(--bg-secondary);
       border: 1px solid var(--border-color);
@@ -60,7 +62,7 @@
       min-height: 120px;
       text-align: center;
       margin: 0 auto;
-      padding: 15px;
+      padding: 15px 25px;
       padding-bottom: 10px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
@@ -263,13 +265,16 @@ td.ContributionCalendar-label {
     position: relative;
     left: 5px;
     text-align: center;
-    padding-right: 4px !important;
+    padding-right: 20px !important;
     width: 35px !important;
     overflow: visible !important;
   }
 
   table.ContributionCalendar-grid td:not(.ContributionCalendar-label) {
     padding: 3px;
+    width: 11px !important;
+    min-width: 11px !important;
+    max-width: 11px !important;
   }
 
   /* Add thick visible border to create clear separation between squares */

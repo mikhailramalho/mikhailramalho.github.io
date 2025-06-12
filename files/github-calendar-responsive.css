@@ -80,11 +80,19 @@ rect.ContributionCalendar-day[data-level='4'] {
     height: 9px;
 }
 
-/* Create spacing with a slightly thicker border and more visible rounded corners */
+/* Force uniform column widths by overriding library calculations */
+.calendar table.ContributionCalendar-grid {
+    border-collapse: separate !important;
+    border-spacing: 1px !important;
+}
+
 .calendar td.ContributionCalendar-day {
-    border: 2px solid var(--bg-secondary) !important;
+    width: 8px !important;
+    min-width: 8px !important;
+    max-width: 8px !important;
+    border: 1px solid var(--bg-secondary) !important;
     box-sizing: border-box !important;
-    border-radius: 6px !important;
+    border-radius: 2px !important;
 }
 
 .calendar .width-full > .float-left {
