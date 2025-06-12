@@ -261,9 +261,11 @@
 
 td.ContributionCalendar-label {
     position: relative;
-    right: 3px;
-    text-align: right;
-    padding-right: 10px !important;
+    left: 5px;
+    text-align: center;
+    padding-right: 4px !important;
+    width: 35px !important;
+    overflow: visible !important;
   }
 
   table.ContributionCalendar-grid td:not(.ContributionCalendar-label) {
