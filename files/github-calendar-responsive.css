@@ -1,21 +1,22 @@
+/* Default: Light theme colors (when no system preference is available) */
 :root {
-  --color-calendar-graph-day-bg: #dddbdb;
-  --color-calendar-graph-day-L1-bg: #39dd34;
-  --color-calendar-graph-day-L2-bg: #45a045;
-  --color-calendar-graph-day-L3-bg: #047526;
-  --color-calendar-graph-day-L4-bg: #0a4208;
-  --calendar-text-color: #aaa;
+  --color-calendar-graph-day-bg: #ebedf0;
+  --color-calendar-graph-day-L1-bg: #9be9a8;
+  --color-calendar-graph-day-L2-bg: #40c463;
+  --color-calendar-graph-day-L3-bg: #30a14e;
+  --color-calendar-graph-day-L4-bg: #216e39;
+  --calendar-text-color: #666;
 }
 
-/* Light theme for GitHub calendar */
-@media (prefers-color-scheme: light) {
+/* Dark theme when system prefers dark */
+@media (prefers-color-scheme: dark) {
   :root {
-    --color-calendar-graph-day-bg: #ebedf0;
-    --color-calendar-graph-day-L1-bg: #9be9a8;
-    --color-calendar-graph-day-L2-bg: #40c463;
-    --color-calendar-graph-day-L3-bg: #30a14e;
-    --color-calendar-graph-day-L4-bg: #216e39;
-    --calendar-text-color: #666;
+    --color-calendar-graph-day-bg: #161b22;
+    --color-calendar-graph-day-L1-bg: #0e4429;
+    --color-calendar-graph-day-L2-bg: #006d32;
+    --color-calendar-graph-day-L3-bg: #26a641;
+    --color-calendar-graph-day-L4-bg: #39d353;
+    --calendar-text-color: #8b949e;
   }
 }
 
@@ -41,22 +42,49 @@
 
 rect.ContributionCalendar-day[data-level='0'] {
     fill: var(--color-calendar-graph-day-bg);
+    stroke: #666666;
+    stroke-width: 1px;
+    width: 9px;
+    height: 9px;
 }
 
 rect.ContributionCalendar-day[data-level='1'] {
     fill: var(--color-calendar-graph-day-L1-bg);
+    stroke: #666666;
+    stroke-width: 1px;
+    width: 9px;
+    height: 9px;
 }
 
 rect.ContributionCalendar-day[data-level='2'] {
     fill: var(--color-calendar-graph-day-L2-bg);
+    stroke: #666666;
+    stroke-width: 1px;
+    width: 9px;
+    height: 9px;
 }
 
 rect.ContributionCalendar-day[data-level='3'] {
     fill: var(--color-calendar-graph-day-L3-bg);
+    stroke: #666666;
+    stroke-width: 1px;
+    width: 9px;
+    height: 9px;
 }
 
 rect.ContributionCalendar-day[data-level='4'] {
     fill: var(--color-calendar-graph-day-L4-bg);
+    stroke: #666666;
+    stroke-width: 1px;
+    width: 9px;
+    height: 9px;
+}
+
+/* Create spacing with a slightly thicker border and more visible rounded corners */
+.calendar td.ContributionCalendar-day {
+    border: 2px solid var(--bg-secondary) !important;
+    box-sizing: border-box !important;
+    border-radius: 6px !important;
 }
 
 .calendar .width-full > .float-left {
