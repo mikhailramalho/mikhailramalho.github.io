@@ -30,6 +30,26 @@
 		#about .section-title {
 			margin-right: -15px;
 		}
+
+		/* Reduce section spacing only for publications and tools */
+		#publications, #tools {
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+		}
+
+		/* Reduce bottom spacing of about section */
+		#about {
+			padding-top: 35px !important;
+			padding-bottom: 0 !important;
+			margin-bottom: 0 !important;
+		}
+
+		/* Also reduce spacing within these sections */
+		#publications .section-title, #tools .section-title {
+			margin-top: 0 !important;
+		}
 	</style>
 
 	<!-- Structured Data for SEO -->
