@@ -324,6 +324,22 @@
 	<script src="./files/wow.min.js"></script>
 	<script src="./files/custom.js"></script>
 
+	<!-- Override slow smooth scrolling -->
+	<script>
+		$(document).ready(function() {
+			// Override the original smooth scroll with faster, smoother animation
+			$('.custom-navbar a').off('click').on('click', function(event) {
+				var target = $(this.getAttribute('href'));
+				if (target.length) {
+					event.preventDefault();
+					$('html, body').stop(true, false).animate({
+						scrollTop: target.offset().top - 49
+					}, 300, 'swing'); // 300ms with smooth easing
+				}
+			});
+		});
+	</script>
+
 	<!-- Theme Management Script -->
 	<script>
 		(function() {
