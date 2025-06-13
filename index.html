@@ -32,8 +32,14 @@
 
 	<!-- Align About me section with other sections -->
 	<style>
-		#about .col-md-8 {
-			padding-right: 15px;
+		/* Remove the right margin restriction for About me section on desktop */
+		@media (min-width: 769px) {
+			#about .col-md-8 {
+				padding-right: 0;
+			}
+			#about .section-title {
+				margin-right: -15px;
+			}
 		}
 
 		/* Mobile spacing fix */
