@@ -11,7 +11,7 @@
 	<meta name="author" content="Mikhail R. Gadelha">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
+
 	<!-- Performance and Preloading Hints -->
 	<link rel="preload" href="./files/style.css" as="style">
 	<link rel="preload" href="./files/bootstrap.min.css" as="style">
@@ -53,10 +53,14 @@
 			#about .col-md-4 p[align="center"] {
 				text-align: center !important;
 			}
-			
 			/* Add padding to match section-title alignment */
 			#about .col-md-4 p:not([align="center"]) {
-				padding-left: 15px !important;
+				padding-left: 10px !important;
+				padding-right: 15px !important;
+			}
+			/* Projects heading with less padding */
+			#about .col-md-4 h4 {
+				padding-left: 10px !important;
 				padding-right: 15px !important;
 			}
 			/* Fix list alignment - use margin instead of padding to keep bullets inside */
@@ -210,7 +214,7 @@
 			<div class="navbar-header">
 				<!-- LOGO TEXT HERE -->
 				<a href="index.html" class="navbar-brand">Mikhail R. Gadelha</a>
-				
+
 				<!-- THEME TOGGLE FOR MOBILE -->
 				<button id="theme-toggle-mobile" type="button" style="background: none; border: none; color: inherit; padding: 10px 15px; font-size: 16px; cursor: pointer; float: right; margin-top: 5px; line-height: 20px;" title="Toggle theme">🌓</button>
 			</div>
@@ -261,7 +265,7 @@
 					<p>Phd in Computer Science <a href="https://eprints.soton.ac.uk/433530/">[Thesis]</a>.</p>
 
 					<p style="margin-top: 25px">
-						<b>Projects</b>
+						<h4>Projects</h4>
 					<ul>
 						<li><a href="https://github.com/esbmc/esbmc" target="_blank">ESBMC</a></li>
 						<li><a href="https://github.com/mikhailramalho/camada" target="_blank">Camada</a></li>
@@ -381,7 +385,7 @@
 							</div>
 							<div style="margin-bottom: 20px;">
 								<p><strong><a href="https://www.youtube.com/watch?v=GytmaH64wFo"
-									target="_blank">RISC-V Support into LLVM's libc: Challenges and Solutions for 32-bit and 64-bit</a></strong> 
+									target="_blank">RISC-V Support into LLVM's libc: Challenges and Solutions for 32-bit and 64-bit</a></strong>
 									[<a href="slides.pdf" target="_blank">Slides</a>]<br>
 								<em>LLVM Developers' Meeting, October 2024</em><br>
 								<small>Technical presentation detailing the implementation of RISC-V support in LLVM's libc project. Addresses unique challenges in supporting both 32-bit and 64-bit RISC-V architectures, including ABI compatibility, syscall interfaces, and performance optimizations. As the RISC-V libc maintainer, presents architectural decisions and solutions for bringing full C library support to RISC-V platforms.</small></p>
