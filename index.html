@@ -106,8 +106,11 @@
 		}
 
 		/* Align Publications and Open Source sections with About me section */
-		#publications .section-title, #tools .section-title {
-			padding-right: 15px;
+		@media (min-width: 769px) {
+			#publications .section-title, #tools .section-title {
+				padding-right: 0;
+				margin-right: 0px;
+			}
 		}
 
 		/* Mobile alignment */
