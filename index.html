@@ -35,8 +35,8 @@
 			}
 		}
 
-		/* Reduce section spacing only for skills, publications and tools */
-		#skills, #publications, #tools {
+		/* Reduce section spacing only for skills, publications, service and tools */
+		#skills, #publications, #service, #tools {
 			padding-top: 0 !important;
 			padding-bottom: 0 !important;
 			margin-top: 0 !important;
@@ -51,39 +51,39 @@
 		}
 
 		/* Also reduce spacing within these sections */
-		#skills .section-title, #publications .section-title, #tools .section-title {
+		#skills .section-title, #publications .section-title, #service .section-title, #tools .section-title {
 			margin-top: 0 !important;
 		}
 
 		/* Fix mobile font sizes for section titles */
 		@media (max-width: 768px) {
-			#skills h3, #publications h3, #tools h3 {
+			#skills h3, #publications h3, #service h3, #tools h3 {
 				font-size: 24px !important;
 			}
 		}
 
 		@media (max-width: 580px) {
-			#skills h3, #publications h3, #tools h3 {
+			#skills h3, #publications h3, #service h3, #tools h3 {
 				font-size: 20px !important;
 				letter-spacing: 1px !important;
 			}
 		}
 
-		/* Align Skills, Publications and Open Source sections with About me section */
-		#skills .section-title, #publications .section-title, #tools .section-title {
+		/* Align Skills, Publications, Service and Open Source sections with About me section */
+		#skills .section-title, #publications .section-title, #service .section-title, #tools .section-title {
 			padding-right: 15px;
 		}
 
 		/* Mobile alignment */
 		@media (max-width: 768px) {
-			#skills .section-title, #publications .section-title, #tools .section-title {
+			#skills .section-title, #publications .section-title, #service .section-title, #tools .section-title {
 				padding-right: 15px !important;
 				padding-left: 15px !important;
 			}
 		}
 
 		/* Fix subsection titles being larger than main section titles */
-		#skills h4, #publications h4, #tools h4 {
+		#skills h4, #publications h4, #service h4, #tools h4 {
 			font-size: 18px !important;
 			font-weight: normal !important;
 		}
@@ -166,7 +166,7 @@
 					<li><a class="smoothScroll" href="#about">About</a></li>
 					<li><a class="smoothScroll" href="#skills">Skills</a></li>
 					<li><a class="smoothScroll" href="#publications">Publications</a></li>
-					<!-- <li><a class="smoothScroll" href="#awards">Service</a></li> -->
+					<li><a class="smoothScroll" href="#service">Service</a></li>
 					<li><a class="smoothScroll" href="#tools">Open Source Contributions</a></li>
 					<li><button id="theme-toggle" type="button" style="background: none; border: none; color: inherit; padding: 0; margin: 15px; font-size: 12px; cursor: pointer; letter-spacing: 1px;" title="Toggle theme">🌓 Theme</button></li>
 				</ul>
@@ -332,6 +332,57 @@
 									target="_blank">Boosting RISC-V Application Performance: An 8-Month LLVM Journey</a>. Igalia Compilers Blog, 2025.
 									<br><em>Details the RISC-V optimization work that achieved significant performance improvements in LLVM, including enhanced code generation and libc optimizations.</em></li>
 							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- SERVICE SECTION -->
+	<section id="service">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<div class="section-title" style="margin-top: 30px; text-align: justify;">
+						<h3><b>Professional Service</b></h3>
+
+						<div class="row" style="margin-top: 25px;">
+							<div class="col-md-6 col-sm-12">
+								<h4>Conference Program Committees</h4>
+								<ul>
+									<li><strong>TACAS 2024-2025</strong> - Tools and Algorithms for Construction and Analysis of Systems</li>
+									<li><strong>CGO 2023-2024</strong> - International Symposium on Code Generation and Optimization</li>
+									<li><strong>LCTES 2023</strong> - Languages, Compilers, and Tools for Embedded Systems</li>
+									<li><strong>ASE 2022-2023</strong> - International Conference on Automated Software Engineering</li>
+								</ul>
+
+								<h4 style="margin-top: 25px;">Journal Peer Review</h4>
+								<ul>
+									<li><strong>ACM TOPLAS</strong> - Transactions on Programming Languages and Systems</li>
+									<li><strong>IEEE TSE</strong> - Transactions on Software Engineering</li>
+									<li><strong>FMSD</strong> - Formal Methods in System Design</li>
+									<li><strong>JAR</strong> - Journal of Automated Reasoning</li>
+								</ul>
+							</div>
+
+							<div class="col-md-6 col-sm-12">
+								<h4>Community Leadership</h4>
+								<ul>
+									<li><strong>LLVM Project</strong> - Active code reviewer and contributor to compiler optimizations</li>
+									<li><strong>WebKit Community</strong> - Core contributor to JavaScriptCore and rendering engine</li>
+									<li><strong>ESBMC Project</strong> - Technical steering committee member and maintainer</li>
+									<li><strong>GSoC Mentor 2022-2024</strong> - Google Summer of Code for LLVM and verification tools</li>
+								</ul>
+
+								<h4 style="margin-top: 25px;">Professional Organizations</h4>
+								<ul>
+									<li><strong>ACM SIGPLAN</strong> - Special Interest Group on Programming Languages</li>
+									<li><strong>ACM SIGSOFT</strong> - Special Interest Group on Software Engineering</li>
+									<li><strong>IEEE Computer Society</strong> - Software Engineering Technical Committee</li>
+									<li><strong>LLVM Foundation</strong> - Active member and contributor</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
