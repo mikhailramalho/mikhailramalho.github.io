@@ -155,6 +155,9 @@
 			<div class="navbar-header">
 				<!-- LOGO TEXT HERE -->
 				<a href="index.html" class="navbar-brand">Mikhail R. Gadelha</a>
+				
+				<!-- THEME TOGGLE FOR MOBILE -->
+				<button id="theme-toggle-mobile" type="button" style="background: none; border: none; color: inherit; padding: 10px; font-size: 16px; cursor: pointer; float: right; margin-top: 10px;" title="Toggle theme">🌓</button>
 			</div>
 
 			<!-- NAVIGATION LINKS -->
@@ -392,6 +395,7 @@
 			// Update toggle button text based on current theme
 			function updateToggleButton() {
 				const toggleButton = document.getElementById('theme-toggle');
+				const toggleButtonMobile = document.getElementById('theme-toggle-mobile');
 				const currentTheme = getCurrentTheme();
 
 				if (toggleButton) {
@@ -401,6 +405,16 @@
 					} else {
 						toggleButton.innerHTML = '🌙 Dark';
 						toggleButton.title = 'Switch to dark theme';
+					}
+				}
+
+				if (toggleButtonMobile) {
+					if (currentTheme === 'dark') {
+						toggleButtonMobile.innerHTML = '☀️';
+						toggleButtonMobile.title = 'Switch to light theme';
+					} else {
+						toggleButtonMobile.innerHTML = '🌙';
+						toggleButtonMobile.title = 'Switch to dark theme';
 					}
 				}
 			}
@@ -446,10 +460,14 @@
 					currentYearElement.textContent = new Date().getFullYear();
 				}
 
-				// Add event listener to toggle button
+				// Add event listener to toggle buttons
 				const toggleButton = document.getElementById('theme-toggle');
+				const toggleButtonMobile = document.getElementById('theme-toggle-mobile');
 				if (toggleButton) {
 					toggleButton.addEventListener('click', toggleTheme);
+				}
+				if (toggleButtonMobile) {
+					toggleButtonMobile.addEventListener('click', toggleTheme);
 				}
 			});
 		})();
