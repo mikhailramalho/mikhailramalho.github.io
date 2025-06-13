@@ -665,15 +665,35 @@ footer .dash-line {
     font-size: 30px;
   }
 
+  h3 {
+    font-size: 24px;
+  }
+
   .custom-navbar {
-    background-color: var(--navbar-bg);
+    background-color: var(--navbar-bg) !important;
     box-shadow: 0 40px 100px rgba(0, 0, 0, .2);
     padding-top: 0px;
+  }
+
+  /* Fix navbar toggle button */
+  .custom-navbar .navbar-toggle {
+    border-color: var(--navbar-text);
+  }
+
+  .custom-navbar .navbar-toggle .icon-bar {
+    background-color: var(--navbar-text);
   }
 
   .custom-navbar .nav li a {
     display: inline-block;
     margin-bottom: 0px;
+    color: var(--navbar-link) !important;
+  }
+
+  /* Fix collapsed menu background */
+  .custom-navbar .navbar-collapse {
+    background-color: var(--navbar-bg);
+    border: none;
   }
 
   .about-thumb-wrap .col-md-4,
@@ -688,14 +708,20 @@ footer .dash-line {
 
   footer .copyright-text {
     padding-bottom: 12px;
+    color: var(--text-primary) !important;
+  }
+
+  /* Fix footer background on mobile */
+  footer {
+    background: var(--bg-secondary) !important;
   }
 }
 
 @media (max-width: 580px) {
 
   h3 {
-    font-size: 14px;
-    letter-spacing: 4px;
+    font-size: 20px;
+    letter-spacing: 1px;
   }
 
   #team .team-thumb h2 {
@@ -703,8 +729,13 @@ footer .dash-line {
   }
 
   #about .about-thumb {
-    padding: 22px 12px;
+    padding: 22px 15px 22px 12px;
     margin-top: 0px;
+  }
+
+  /* Fix about section spacing on mobile */
+  #about .col-md-8 {
+    padding-right: 15px !important;
   }
 
   .about-thumb .social-icon {

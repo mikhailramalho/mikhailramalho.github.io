@@ -24,11 +24,15 @@
 	<!-- Align About me section with other sections -->
 	<style>
 		#about .col-md-8 {
-			padding-right: 0;
+			padding-right: 15px;
 		}
 
-		#about .section-title {
-			margin-right: -15px;
+		/* Mobile spacing fix */
+		@media (max-width: 768px) {
+			#about .col-md-8 {
+				padding-right: 15px !important;
+				padding-left: 15px !important;
+			}
 		}
 
 		/* Reduce section spacing only for publications and tools */
@@ -49,6 +53,20 @@
 		/* Also reduce spacing within these sections */
 		#publications .section-title, #tools .section-title {
 			margin-top: 0 !important;
+		}
+
+		/* Fix mobile font sizes for section titles */
+		@media (max-width: 768px) {
+			#publications h3, #tools h3 {
+				font-size: 24px !important;
+			}
+		}
+
+		@media (max-width: 580px) {
+			#publications h3, #tools h3 {
+				font-size: 20px !important;
+				letter-spacing: 1px !important;
+			}
 		}
 	</style>
 
