@@ -199,15 +199,14 @@
 
                             <h3 class="mt-25"><b>GitHub Contributions</b></h3>
 
-							<!-- GitHub Activity Calendar -->
-							<script src="./files/github-calendar.js" defer></script>
+							<!-- GitHub Activity Calendar (script lazy-loaded near viewport) -->
 							<link rel="stylesheet" href="./files/github-calendar.min.css" />
 
 							<!-- GitHub contributions calendar container -->
-							<div class="calendar">
+							<div class="calendar" role="region" aria-label="GitHub contributions calendar">
 								Loading the contribution calendar...
 							</div>
-							</p>
+							<p class="calendar-cta mt-25"><a href="https://github.com/mikhailramalho" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
 						</div>
 					</div>
 				</div>
@@ -419,17 +418,60 @@
 	<!-- Removed jQuery and Bootstrap JS; using vanilla JS in custom.js -->
 	<script src="./files/custom.min.js" defer></script>
 
-	<!-- Initialize GitHub calendar after scripts are loaded -->
+	<!-- Lazy-load GitHub calendar when near viewport -->
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			if (window.GitHubCalendar) {
-				GitHubCalendar(".calendar", "mikhailramalho", {
+	(function(){
+		function loadCalendar(){
+			function init(){
+				if (!window.GitHubCalendar) return;
+				GitHubCalendar('.calendar', 'mikhailramalho', {
 					responsive: true,
 					tooltips: true,
-					global_stats: false
+					global_stats: false,
+					summary_text: ''
 				});
+				// Post-process: remove unwanted links and ensure rel on blank targets
+				var container = document.querySelector('.calendar');
+				if (!container) return;
+                var cleanup = function(){
+					// Remove GitHub skip link if present
+					container.querySelectorAll('a').forEach(function(a){
+						var txt = (a.textContent||'').trim().toLowerCase();
+						if (txt.indexOf('skip to contributions year list') !== -1) {
+							a.remove();
+						}
+                    if (txt.indexOf('learn how we count contributions') !== -1) {
+                        a.remove();
+                    }
+                    if (a.getAttribute('target') === '_blank') {
+                        a.setAttribute('rel','noopener noreferrer');
+                    }
+                });
+                };
+				// Try immediate cleanup and also after a short delay in case of late updates
+				cleanup();
+				setTimeout(cleanup, 300);
 			}
+			if (window.GitHubCalendar) { init(); return; }
+			var s=document.createElement('script');
+			s.src='./files/github-calendar.js';
+			s.defer=true;
+			s.onload=init;
+			document.body.appendChild(s);
+		}
+
+		document.addEventListener('DOMContentLoaded', function(){
+			var cal=document.querySelector('.calendar');
+			if (!cal) return;
+			if (!('IntersectionObserver' in window)) { loadCalendar(); return; }
+			var io=new IntersectionObserver(function(entries){
+				entries.forEach(function(entry){
+					if (entry.isIntersecting) { loadCalendar(); io.disconnect(); }
+				});
+			}, { rootMargin: '200px 0px' });
+			io.observe(cal);
 		});
+	})();
 	</script>
 
 
