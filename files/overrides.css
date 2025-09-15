@@ -1,7 +1,7 @@
 /* Local overrides (moved from inline <style>) and small UX tweaks */
 
 /* Reduce headshot image width and center */
-#about .col-md-4 picture img { display: block; margin: 0 auto; width: 51% !important; }
+#about .col-md-4 picture img { display: block; margin: 0 auto; width: 59.7% !important; }
 
 /* Skip link base styles */
 .skip-link { position: absolute; top: -40px; left: 6px; background: var(--bg-primary); color: var(--text-primary); padding: 8px; text-decoration: none; z-index: 100000; border: 2px solid var(--border-color); }
