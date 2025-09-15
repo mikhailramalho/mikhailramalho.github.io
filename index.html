@@ -448,9 +448,14 @@
                     }
                 });
                 };
-				// Try immediate cleanup and also after a short delay in case of late updates
-				cleanup();
-				setTimeout(cleanup, 300);
+                // Try immediate cleanup and also after a short delay in case of late updates
+                cleanup();
+                setTimeout(cleanup, 300);
+                // Observe future DOM changes to prevent flash of helper links
+                try {
+                    var mo = new MutationObserver(function(){ cleanup(); });
+                    mo.observe(container, { childList: true, subtree: true });
+                } catch(e) {}
 			}
 			if (window.GitHubCalendar) { init(); return; }
 			var s=document.createElement('script');

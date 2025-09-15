@@ -195,6 +195,12 @@
   .calendar .contrib-legend .ContributionCalendar-day[data-level='4'] { background-color: var(--cal-day4) !important; }
   .calendar .contrib-legend .text-small { color: var(--text-secondary); }
 
+  /* Proactively hide helper/skip links inside calendar to avoid flash */
+  .calendar a[aria-label*="Skip to contributions year list"] { display: none !important; }
+  .calendar a[href*="how-we-count"] { display: none !important; }
+  .calendar a[href*="how_we_count"] { display: none !important; }
+  .calendar a[href*="learn-how-we-count"] { display: none !important; }
+
   /* Explicitly color GitHub legend chips by id + data-level */
   .calendar [id^="contribution-graph-legend-level-"][data-level='0'] { background-color: var(--cal-day0) !important; width:10px !important; height:10px !important; display:inline-block !important; border-radius:2px; margin:0 1px !important; }
   .calendar [id^="contribution-graph-legend-level-"][data-level='1'] { background-color: var(--cal-day1) !important; width:10px !important; height:10px !important; display:inline-block !important; border-radius:2px; margin:0 1px !important; }
