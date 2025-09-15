@@ -1,11 +1,7 @@
 (function () {
   'use strict';
 
-  // Preloader: hide on DOM ready for faster paint
-  document.addEventListener('DOMContentLoaded', function () {
-    var pre = document.querySelector('.preloader');
-    if (pre) pre.style.display = 'none';
-  });
+  // Preloader removed
 
   // Scroll shadow on navbar
   function updateNavShadow() {
