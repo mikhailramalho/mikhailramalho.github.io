@@ -1,40 +1,43 @@
 (function ($) {
 
-    "use strict";
+  "use strict";
 
-        // PRE loader
-        $(window).load(function(){
-          $('.preloader').fadeOut(1000); // set duration in brackets    
-        });
+  // Preloader: hide on DOM ready for faster paint
+  $(function () {
+    $('.preloader').fadeOut(300);
+  });
 
+  // Close navbar on link click (mobile)
+  $('.navbar-collapse a').on('click', function () {
+    $(".navbar-collapse").collapse('hide');
+  });
 
-        //Navigation Section
-        $('.navbar-collapse a').on('click',function(){
-          $(".navbar-collapse").collapse('hide');
-        });
+  // Add subtle shadow when scrolled
+  $(window).on('scroll', function () {
+    if ($(".navbar").offset().top > 50) {
+      $(".navbar-fixed-top").addClass("top-nav-collapse");
+    } else {
+      $(".navbar-fixed-top").removeClass("top-nav-collapse");
+    }
+  });
 
-        $(window).scroll(function() {
-          if ($(".navbar").offset().top > 50) {
-            $(".navbar-fixed-top").addClass("top-nav-collapse");
-              } else {
-                $(".navbar-fixed-top").removeClass("top-nav-collapse");
-              }
-        });
+  // Smooth scroll with dynamic offset (navbar height)
+  $(function () {
+    $('.custom-navbar a').off('click.smooth').on('click.smooth', function (event) {
+      var href = $(this).attr('href');
+      if (!href || href.charAt(0) !== '#') return; // external links
+      var $target = $(href);
+      if ($target.length) {
+        event.preventDefault();
+        var offset = document.querySelector('.navbar').offsetHeight || 49;
+        $('html, body').stop(true, false).animate({
+          scrollTop: $target.offset().top - offset
+        }, 300, 'swing');
+      }
+    });
+  });
 
-
-        // Smoothscroll js
-        $(function() {
-          $('.custom-navbar a, #home a').bind('click', function(event) {
-            var $anchor = $(this);
-            $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top - 49
-            }, 1000);
-            event.preventDefault();
-          });
-        });  
-
-
-        // WOW Animation js
-        new WOW({ mobile: false }).init();
+  // WOW Animation js
+  new WOW({ mobile: false }).init();
 
 })(jQuery);

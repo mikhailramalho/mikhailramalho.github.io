@@ -18,140 +18,32 @@
 
 	<!-- Performance and Preloading Hints -->
 	<link rel="preload" href="./files/style.css" as="style">
+	<link rel="preload" href="./files/overrides.css" as="style">
 	<link rel="preload" href="./files/bootstrap.min.css" as="style">
 	<link rel="preload" href="./files/mikhail.jpg" as="image">
-	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600&display=swap" rel="stylesheet">
 	<meta http-equiv="Cache-Control" content="public, max-age=31536000">
 	<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 	<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
 	<link rel="stylesheet" href="./files/bootstrap.min.css">
 	<link rel="stylesheet" href="./files/animate.css">
-	<link rel="stylesheet" href="./files/magnific-popup.css">
+	<!-- Removed Magnific Popup (unused) -->
 	<link rel="stylesheet" href="./files/font-awesome.min.css">
 
 	<!-- main css -->
 	<link rel="stylesheet" href="./files/style.css">
+	<link rel="stylesheet" href="./files/overrides.css">
 	<link rel="stylesheet" href="./files/github-calendar-responsive.css" />
 
-	<!-- Align About me section with other sections -->
-	<style>
-		/* Remove the right margin restriction for About me section on desktop */
-		@media (min-width: 769px) {
-			#about .col-md-8 {
-				padding-right: 0;
-			}
-			#about .section-title {
-				margin-right: -15px;
-			}
-		}
-
-		/* Mobile spacing fix */
-		@media (max-width: 768px) {
-			#about .col-md-8,
-			#about .col-md-4 {
-				padding-right: 15px !important;
-				padding-left: 15px !important;
-			}
-			/* Keep social icons centered */
-			#about .col-md-4 p[align="center"] {
-				text-align: center !important;
-			}
-			/* Add padding to match section-title alignment */
-			#about .col-md-4 p:not([align="center"]) {
-				padding-left: 10px !important;
-				padding-right: 15px !important;
-			}
-			/* Projects heading with less padding */
-			#about .col-md-4 h4 {
-				padding-left: 10px !important;
-				padding-right: 15px !important;
-			}
-			/* Fix list alignment - use margin instead of padding to keep bullets inside */
-			#about .col-md-4 ul {
-				margin-left: 30px !important;
-				margin-right: 15px !important;
-				padding-left: 20px !important;
-			}
-		}
-
-		/* Reduce section spacing only for publications and tools */
-		#publications, #tools {
-			padding-top: 0 !important;
-			padding-bottom: 0 !important;
-			margin-top: 0 !important;
-			margin-bottom: 0 !important;
-		}
-
-		/* Reduce bottom spacing of about section */
-		#about {
-			padding-top: 35px !important;
-			padding-bottom: 0 !important;
-			margin-bottom: 0 !important;
-		}
-
-		/* Also reduce spacing within these sections */
-		#publications .section-title, #tools .section-title {
-			margin-top: 0 !important;
-		}
-
-		/* Fix mobile font sizes for section titles */
-		@media (max-width: 768px) {
-			#publications h3, #tools h3 {
-				font-size: 24px !important;
-			}
-		}
-
-		@media (max-width: 580px) {
-			#publications h3, #tools h3 {
-				font-size: 20px !important;
-				letter-spacing: 1px !important;
-			}
-		}
-
-		/* Align Publications and Open Source sections with About me section */
-		@media (min-width: 769px) {
-			#publications .section-title, #tools .section-title {
-				padding-right: 0;
-				margin-right: 0px;
-			}
-		}
-
-		/* Mobile alignment */
-		@media (max-width: 768px) {
-			#publications .section-title, #tools .section-title {
-				padding-right: 15px !important;
-				padding-left: 15px !important;
-			}
-		}
-
-		/* Fix subsection titles being larger than main section titles */
-		#publications h4, #tools h4 {
-			font-size: 18px !important;
-			font-weight: normal !important;
-		}
-
-		/* Hide mobile theme toggle on desktop */
-		@media (min-width: 769px) {
-			#theme-toggle-mobile {
-				display: none !important;
-			}
-		}
-
-		/* Better vertical alignment for theme toggle buttons */
-		#theme-toggle {
-			vertical-align: middle !important;
-			line-height: 20px !important;
-			padding-top: 0 !important;
-			padding-bottom: 0 !important;
-		}
-
-		/* Ensure proper alignment in navbar */
-		.custom-navbar .nav > li {
-			vertical-align: middle;
-		}
-
-	</style>
+	<!-- Open Graph & Canonical -->
+	<link rel="canonical" href="https://mikhailramalho.github.io/">
+	<meta property="og:title" content="Mikhail R. Gadelha">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://mikhailramalho.github.io/">
+	<meta property="og:image" content="https://mikhailramalho.github.io/files/mikhail.jpg">
 
 	<!-- Structured Data for SEO -->
 	<script type="application/ld+json">
@@ -254,32 +146,32 @@
 					</p>
 
 					<p align="center" style="margin-top: 25px;" role="list" aria-label="Contact and social media links">
-						<a href="mailto:mikhail@igalia.com" target="_blank" aria-label="Send email to mikhail@igalia.com"><img alt="Email contact" src="files/mail.jpg"
+					<a href="mailto:mikhail@igalia.com" target="_blank" rel="noopener noreferrer" aria-label="Send email to mikhail@igalia.com"><img alt="Email contact" src="files/mail.jpg"
 								width="30" height="30"></a>
-						<a href="https://github.com/mikhailramalho" target="_blank" aria-label="Visit Mikhail's GitHub profile (opens in new tab)"><img alt="GitHub profile"
+						<a href="https://github.com/mikhailramalho" target="_blank" rel="noopener noreferrer" aria-label="Visit Mikhail's GitHub profile (opens in new tab)"><img alt="GitHub profile"
 								src="files/github.png" width="30" height="30"></a>
-						<a href="https://www.linkedin.com/in/mikhail-r-gadelha/" target="_blank" aria-label="Visit Mikhail's LinkedIn profile (opens in new tab)"><img alt="LinkedIn profile"
+						<a href="https://www.linkedin.com/in/mikhail-r-gadelha/" target="_blank" rel="noopener noreferrer" aria-label="Visit Mikhail's LinkedIn profile (opens in new tab)"><img alt="LinkedIn profile"
 								src="files/linkedin.png" width="30" height="30"></a>
-						<a href="https://dblp.org/pid/127/1726.html" target="_blank" aria-label="Visit Mikhail's DBLP academic profile (opens in new tab)"><img alt="DBLP academic profile"
+						<a href="https://dblp.org/pid/127/1726.html" target="_blank" rel="noopener noreferrer" aria-label="Visit Mikhail's DBLP academic profile (opens in new tab)"><img alt="DBLP academic profile"
 								src="files/dblp.png" width="30" height="30"></a>
-						<a href="https://scholar.google.com/citations?user=sQiAp1AAAAAJ&hl=en" target="_blank" aria-label="Visit Mikhail's Google Scholar profile (opens in new tab)"><img
+						<a href="https://scholar.google.com/citations?user=sQiAp1AAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Visit Mikhail's Google Scholar profile (opens in new tab)"><img
 								alt="Google Scholar profile" src="files/scholar.png" width="30" height="30"></a>
 					</p>
 
 					<p style="margin-top: 25px"></p>
-					<p>Software Engineer at <a href="https://igalia.com" target="_blank">Igalia</a>. [<a href="./files/resume.pdf" target="_blank">Resume</a>]</p>
+					<p>Software Engineer at <a href="https://igalia.com" target="_blank" rel="noopener noreferrer">Igalia</a>. [<a href="./files/resume.pdf" target="_blank">Resume</a>]</p>
 
 					<p>Phd in Computer Science <a href="https://eprints.soton.ac.uk/433530/">[Thesis]</a>.</p>
 
-					<p style="margin-top: 25px">
+					<div style="margin-top: 25px">
 						<h4>Projects</h4>
 					<ul>
-						<li><a href="https://github.com/esbmc/esbmc" target="_blank">ESBMC</a></li>
-						<li><a href="https://github.com/mikhailramalho/camada" target="_blank">Camada</a></li>
+						<li><a href="https://github.com/esbmc/esbmc" target="_blank" rel="noopener noreferrer">ESBMC</a></li>
+						<li><a href="https://github.com/mikhailramalho/camada" target="_blank" rel="noopener noreferrer">Camada</a></li>
 						<li><a href="https://github.com/mikhailramalho/gnome-shell-extension-currency-tracker"
-								target="_blank">Currency tracker (Gnome shell extension)</a></li>
+								target="_blank" rel="noopener noreferrer">Currency tracker (Gnome shell extension)</a></li>
 					</ul>
-					</p>
+					</div>
 				</div>
 
 				<div class="col-md-8 col-sm-12">
@@ -386,14 +278,14 @@
 							<h4>Talks, Technical Writing & Industry Impact</h4>
 							<div style="margin-bottom: 20px;">
 								<p><strong><a href="https://blogs.igalia.com/compilers/2025/05/05/boosting-risc-v-application-performance-an-8-month-llvm-journey/"
-									target="_blank">Boosting RISC-V Application Performance: An 8-Month LLVM Journey</a></strong><br>
+									target="_blank" rel="noopener noreferrer">Boosting RISC-V Application Performance: An 8-Month LLVM Journey</a></strong><br>
 								<em>Igalia Compilers Blog, May 2025</em><br>
 								<small>Chronicles an 8-month optimization effort that delivered significant performance improvements for RISC-V applications in LLVM. It details enhanced code generation strategies, libc optimizations, and maintainership of the RISC-V libc port. Work resulted in measurable performance gains across multiple benchmark suites.</small></p>
 							</div>
 							<div style="margin-bottom: 20px;">
 								<p><strong><a href="https://www.youtube.com/watch?v=GytmaH64wFo"
-									target="_blank">RISC-V Support into LLVM's libc: Challenges and Solutions for 32-bit and 64-bit</a></strong>
-									[<a href="./files/slides.pdf" target="_blank">Slides</a>]<br>
+									target="_blank" rel="noopener noreferrer">RISC-V Support into LLVM's libc: Challenges and Solutions for 32-bit and 64-bit</a></strong>
+									[<a href="./files/slides.pdf" target="_blank" rel="noopener noreferrer">Slides</a>]<br>
 								<em>LLVM Developers' Meeting, October 2024</em><br>
 								<small>Technical presentation detailing the implementation of RISC-V support in LLVM's libc project. Addresses unique challenges in supporting both 32-bit and 64-bit RISC-V architectures, including ABI compatibility, syscall interfaces, and performance optimizations. As the RISC-V libc maintainer, presents architectural decisions and solutions for bringing full C library support to RISC-V platforms.</small></p>
 							</div>
@@ -403,19 +295,19 @@
 							<h4>Recent Publications</h4>
 							<div style="margin-bottom: 20px;">
 								<p><strong><a href="https://link.springer.com/chapter/10.1007/978-3-031-90660-2_16"
-									target="_blank">ESBMC v7.7: Efficient Concurrent Software Verification with Scheduling, Incremental SMT and Partial Order Reduction</a></strong> [<a href="./files/2025-svcomp.pdf" target="_blank">PDF</a>]<br>
+									target="_blank" rel="noopener noreferrer">ESBMC v7.7: Efficient Concurrent Software Verification with Scheduling, Incremental SMT and Partial Order Reduction</a></strong> [<a href="./files/2025-svcomp.pdf" target="_blank" rel="noopener noreferrer">PDF</a>]<br>
 								<em>Tools and Algorithms for the Construction and Analysis of Systems (TACAS), 2025</em><br>
 								<small>Improves verification of concurrent C programs through dynamic thread scheduling, incremental SMT solving, and enhanced partial order reduction algorithms. Significantly reduces exploration of redundant states and enables faster bug detection in multi-threaded applications.</small></p>
 							</div>
 							<div style="margin-bottom: 20px;">
 								<p><strong><a href="https://www.sciencedirect.com/science/article/pii/S0167642325000759"
-									target="_blank">ESBMC v7.6: Enhanced model checking of C++ programs with clang AST</a></strong> [<a href="./files/2025-journal.pdf" target="_blank">PDF</a>]<br>
+									target="_blank" rel="noopener noreferrer">ESBMC v7.6: Enhanced model checking of C++ programs with clang AST</a></strong> [<a href="./files/2025-journal.pdf" target="_blank" rel="noopener noreferrer">PDF</a>]<br>
 								<em>Science of Computer Programming, 2025</em><br>
 								<small>Introduces advanced C++ support through Clang AST integration, enabling comprehensive verification of modern C++ features including templates, lambda expressions, and STL containers. Demonstrates significant improvements in verification accuracy and coverage.</small></p>
 							</div>
 							<div style="margin-bottom: 20px;">
 								<p><strong><a href="https://link.springer.com/chapter/10.1007/978-3-031-57256-2_24"
-									target="_blank">ESBMC v7.4: Harnessing the Power of Intervals</a></strong> [<a href="./files/2024-svcomp.pdf" target="_blank">PDF</a>]<br>
+									target="_blank" rel="noopener noreferrer">ESBMC v7.4: Harnessing the Power of Intervals</a></strong> [<a href="./files/2024-svcomp.pdf" target="_blank" rel="noopener noreferrer">PDF</a>]<br>
 								<em>Tools and Algorithms for the Construction and Analysis of Systems (TACAS), 2024</em><br>
 								<small>Implements interval analysis techniques to improve precision in numeric computations and reduce false positives in verification. Enhances handling of floating-point arithmetic and improves scalability for complex numerical programs.</small></p>
 							</div>
@@ -435,7 +327,7 @@
 					<!-- SECTION TITLE -->
 					<div class="section-title" style="margin-top: 30px; text-align: justify;">
 						<h3 id="tools-heading"><b>Open Source Contributions</b></h3>
-						<a href="https://clang.llvm.org/" target="_blank">
+						<a href="https://clang.llvm.org/" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
 								<img style="max-height: 60px; padding-bottom: 15px" src="files/clang-logo.png" loading="lazy"
 									alt="LLVM Clang compiler logo" />
@@ -443,7 +335,7 @@
 								</figcaption>
 							</figure>
 						</a>
-						<a href="https://webkit.org" target="_blank">
+						<a href="https://webkit.org" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
 								<img style="max-height: 60px; padding-bottom: 15px" src="files/webkit-logo.png" loading="lazy"
 									alt="WebKit browser engine logo" />
@@ -451,21 +343,21 @@
 								</figcaption>
 							</figure>
 						</a>
-						<a href="https://esbmc.org" target="_blank">
+						<a href="https://esbmc.org" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
 								<img style="max-height: 55px; padding-bottom: 15px" src="files/esbmc-logo.png" loading="lazy"
 									alt="ESBMC bounded model checker logo" />
 								<figcaption style="padding-top: 10px"><b>ESBMC</b> - As a core contributor and maintainer, I've led the development of several key features including interval analysis, incremental SMT solving, and enhanced C++ support through Clang AST integration. My work has significantly improved verification performance and expanded the tool's capabilities for concurrent software verification.</figcaption>
 							</figure>
 						</a>
-						<a href="https://www.cprover.org/cbmc/" target="_blank">
+						<a href="https://www.cprover.org/cbmc/" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
 								<img style="max-height: 55px; padding-bottom: 15px" src="files/cbmc-logo.png" loading="lazy"
 									alt="CBMC bounded model checker logo" />
 								<figcaption style="padding-top: 10px"><b>CBMC</b> - Contributed bug fixes and enhancements to this widely-used bounded model checker. My contributions focus on improving verification accuracy and extending language support for modern C++ features.</figcaption>
 							</figure>
 						</a>
-						<a href="https://ssvlab.github.io/dsverifier/" target="_blank">
+						<a href="https://ssvlab.github.io/dsverifier/" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
 								<img style="max-height: 60px; padding-bottom: 15px" src="files/dsverifier-logo.png" loading="lazy"
 									alt="DSVerifier digital systems verification tool logo" />
@@ -473,7 +365,7 @@
 								</figcaption>
 							</figure>
 						</a>
-						<a href="https://www.microsoft.com/en-us/research/project/z3-3/" target="_blank">
+						<a href="https://www.microsoft.com/en-us/research/project/z3-3/" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
 								<img style="max-height: 60px; padding-bottom: 15px" src="files/z3-logo.jpeg" loading="lazy" alt="Z3 SMT solver logo" />
 								<figcaption><b>Z3</b> - Contributed bug fixes and improvements to this industry-standard SMT solver, which serves as a critical backend for many verification tools including ESBMC and CBMC.
@@ -504,27 +396,11 @@
 	<!-- SCRIPTS -->
 	<script src="./files/jquery.js"></script>
 	<script src="./files/bootstrap.min.js"></script>
-	<script src="./files/smoothscroll.js"></script>
-	<script src="./files/jquery.magnific-popup.min.js" defer></script>
-	<script src="./files/magnific-popup-options.js" defer></script>
+	<!-- Removed smoothscroll.js and Magnific Popup (unused) -->
 	<script src="./files/wow.min.js" defer></script>
 	<script src="./files/custom.js" defer></script>
 
-	<!-- Override slow smooth scrolling -->
-	<script>
-		$(document).ready(function() {
-			// Override the original smooth scroll with faster, smoother animation
-			$('.custom-navbar a').off('click').on('click', function(event) {
-				var target = $(this.getAttribute('href'));
-				if (target.length) {
-					event.preventDefault();
-					$('html, body').stop(true, false).animate({
-						scrollTop: target.offset().top - 49
-					}, 300, 'swing'); // 300ms with smooth easing
-				}
-			});
-		});
-	</script>
+
 
 	<!-- Theme Management Script -->
 	<script>

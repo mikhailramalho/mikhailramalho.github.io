@@ -29,7 +29,7 @@
 
 ------------------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Figtree');
+/* Fonts are loaded via <link> in HTML head for better performance */
 
 /* Light theme colors (default for browsers without preference) */
 :root {
@@ -304,12 +304,6 @@ footer {
   border: 1px solid var(--text-primary);
   border-top-color: var(--bg-secondary);
   animation: spinner .9s linear infinite;
-}
-
-@keyframes spinner {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes spinner {
