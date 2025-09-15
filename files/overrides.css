@@ -1,0 +1,54 @@
+/* Local overrides (moved from inline <style>) and small UX tweaks */
+
+/* Desktop alignment tweaks for About section */
+@media (min-width: 769px) {
+  #about .col-md-8 { padding-right: 0; }
+  #about .section-title { margin-right: -15px; }
+}
+
+/* Mobile spacing fixes */
+@media (max-width: 768px) {
+  #about .col-md-8,
+  #about .col-md-4 { padding-right: 15px !important; padding-left: 15px !important; }
+  /* Keep social icons centered */
+  #about .col-md-4 p[align="center"] { text-align: center !important; }
+  /* Add padding to match section-title alignment */
+  #about .col-md-4 p:not([align="center"]) { padding-left: 10px !important; padding-right: 15px !important; }
+  /* Projects heading with less padding */
+  #about .col-md-4 h4 { padding-left: 10px !important; padding-right: 15px !important; }
+  /* Fix list alignment */
+  #about .col-md-4 ul { margin-left: 30px !important; margin-right: 15px !important; padding-left: 20px !important; }
+  /* Lighter default navbar shadow on mobile */
+  .custom-navbar { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important; }
+}
+
+/* Reduce spacing for publications and tools */
+#publications, #tools { padding-top: 0 !important; padding-bottom: 0 !important; margin-top: 0 !important; margin-bottom: 0 !important; }
+
+/* Reduce bottom spacing of about section */
+#about { padding-top: 35px !important; padding-bottom: 0 !important; margin-bottom: 0 !important; }
+
+/* Reduce spacing within these sections */
+#publications .section-title, #tools .section-title { margin-top: 0 !important; }
+
+/* Mobile font sizes for section titles */
+@media (max-width: 768px) { #publications h3, #tools h3 { font-size: 24px !important; } }
+@media (max-width: 580px) { #publications h3, #tools h3 { font-size: 20px !important; letter-spacing: 1px !important; } }
+
+/* Align Publications and Open Source sections with About section */
+@media (min-width: 769px) { #publications .section-title, #tools .section-title { padding-right: 0; margin-right: 0px; } }
+@media (max-width: 768px) { #publications .section-title, #tools .section-title { padding-right: 15px !important; padding-left: 15px !important; } }
+
+/* Subsection titles smaller than main titles */
+#publications h4, #tools h4 { font-size: 18px !important; font-weight: normal !important; }
+
+/* Theme toggle adjustments and focus styles */
+@media (min-width: 769px) { #theme-toggle-mobile { display: none !important; } }
+#theme-toggle { vertical-align: middle !important; line-height: 20px !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+#theme-toggle:focus, #theme-toggle-mobile:focus { outline: 2px solid #4c9ffe; outline-offset: 2px; }
+
+/* Navbar collapse visual */
+.top-nav-collapse { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); }
+
+/* Ensure proper alignment in navbar */
+.custom-navbar .nav > li { vertical-align: middle; }

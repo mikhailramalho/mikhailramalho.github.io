@@ -14,7 +14,6 @@
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/svg+xml" href="./files/favicon.svg">
-	<link rel="icon" type="image/png" href="./files/favicon.png">
 
 	<!-- Performance and Preloading Hints -->
 	<link rel="preload" href="./files/style.css" as="style">
@@ -141,8 +140,12 @@
 			<div class="row">
 				<div class="col-md-4 col-sm-12 wow" style="padding-top: 50px;">
 					<p>
-						<img src="files/mikhail.jpg" class="wow img-responsive" data-wow-delay="0.2s" alt="Professional headshot of Mikhail R. Gadelha"
-							style="visibility: hidden; animation-delay: 0.2s; animation-name: none; margin-left: auto; margin-right: auto; display: block; width: 60%">
+						<picture>
+							<source type="image/avif" srcset="files/mikhail-600.avif 600w, files/mikhail-1200.avif 1200w" sizes="(max-width: 768px) 60vw, 20vw">
+							<source type="image/webp" srcset="files/mikhail-600.webp 600w, files/mikhail-1200.webp 1200w" sizes="(max-width: 768px) 60vw, 20vw">
+							<img src="files/mikhail.jpg" class="wow img-responsive" data-wow-delay="0.2s" alt="Professional headshot of Mikhail R. Gadelha" decoding="async" fetchpriority="high"
+								style="visibility: hidden; animation-delay: 0.2s; animation-name: none; margin-left: auto; margin-right: auto; display: block; width: 60%">
+						</picture>
 					</p>
 
 					<p align="center" style="margin-top: 25px;" role="list" aria-label="Contact and social media links">
@@ -329,15 +332,19 @@
 						<h3 id="tools-heading"><b>Open Source Contributions</b></h3>
 						<a href="https://clang.llvm.org/" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
-								<img style="max-height: 60px; padding-bottom: 15px" src="files/clang-logo.png" loading="lazy"
-									alt="LLVM Clang compiler logo" />
+								<picture>
+									<source type="image/avif" srcset="files/clang-logo.avif">
+									<source type="image/webp" srcset="files/clang-logo.webp">
+									<img style="max-height: 60px; padding-bottom: 15px" src="files/clang-logo.png" loading="lazy" decoding="async"
+										alt="LLVM Clang compiler logo" />
+								</picture>
 								<figcaption><b>LLVM/Clang</b> - As a committer to the LLVM project, I've contributed to Clang compiler optimizations, the Clang Static Analyzer, and various tooling enhancements. Currently serving as maintainer of the RISC-V libc port, my recent focus has been on RISC-V code generation improvements and performance optimizations that have delivered significant gains for RISC-V applications.
 								</figcaption>
 							</figure>
 						</a>
 						<a href="https://webkit.org" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
-								<img style="max-height: 60px; padding-bottom: 15px" src="files/webkit-logo.png" loading="lazy"
+								<img style="max-height: 60px; padding-bottom: 15px" src="files/webkit-logo.png" loading="lazy" decoding="async"
 									alt="WebKit browser engine logo" />
 								<figcaption><b>WebKit</b> - As a committer, I've contributed bug fixes, performance improvements, and new features to this critical web browser engine. My work helped ensure the stability and performance of web browsing for millions of users across Safari and other WebKit-based applications.
 								</figcaption>
@@ -345,21 +352,25 @@
 						</a>
 						<a href="https://esbmc.org" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
-								<img style="max-height: 55px; padding-bottom: 15px" src="files/esbmc-logo.png" loading="lazy"
+								<img style="max-height: 55px; padding-bottom: 15px" src="files/esbmc-logo.png" loading="lazy" decoding="async"
 									alt="ESBMC bounded model checker logo" />
 								<figcaption style="padding-top: 10px"><b>ESBMC</b> - As a core contributor and maintainer, I've led the development of several key features including interval analysis, incremental SMT solving, and enhanced C++ support through Clang AST integration. My work has significantly improved verification performance and expanded the tool's capabilities for concurrent software verification.</figcaption>
 							</figure>
 						</a>
 						<a href="https://www.cprover.org/cbmc/" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
-								<img style="max-height: 55px; padding-bottom: 15px" src="files/cbmc-logo.png" loading="lazy"
-									alt="CBMC bounded model checker logo" />
+								<picture>
+									<source type="image/avif" srcset="files/cbmc-logo.avif">
+									<source type="image/webp" srcset="files/cbmc-logo.webp">
+									<img style="max-height: 55px; padding-bottom: 15px" src="files/cbmc-logo.png" loading="lazy" decoding="async"
+										alt="CBMC bounded model checker logo" />
+								</picture>
 								<figcaption style="padding-top: 10px"><b>CBMC</b> - Contributed bug fixes and enhancements to this widely-used bounded model checker. My contributions focus on improving verification accuracy and extending language support for modern C++ features.</figcaption>
 							</figure>
 						</a>
 						<a href="https://ssvlab.github.io/dsverifier/" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
-								<img style="max-height: 60px; padding-bottom: 15px" src="files/dsverifier-logo.png" loading="lazy"
+								<img style="max-height: 60px; padding-bottom: 15px" src="files/dsverifier-logo.png" loading="lazy" decoding="async"
 									alt="DSVerifier digital systems verification tool logo" />
 								<figcaption><b>DSVerifier</b> - Contributed to the development of this specialized verification tool for digital systems, helping to implement verification techniques for fixed-point arithmetic and finite word length effects in digital signal processing applications.
 								</figcaption>
@@ -367,7 +378,7 @@
 						</a>
 						<a href="https://www.microsoft.com/en-us/research/project/z3-3/" target="_blank" rel="noopener noreferrer">
 							<figure style="padding-top: 15px; padding-bottom: 15px">
-								<img style="max-height: 60px; padding-bottom: 15px" src="files/z3-logo.jpeg" loading="lazy" alt="Z3 SMT solver logo" />
+								<img style="max-height: 60px; padding-bottom: 15px" src="files/z3-logo.jpeg" loading="lazy" decoding="async" alt="Z3 SMT solver logo" />
 								<figcaption><b>Z3</b> - Contributed bug fixes and improvements to this industry-standard SMT solver, which serves as a critical backend for many verification tools including ESBMC and CBMC.
 								</figcaption>
 							</figure>
