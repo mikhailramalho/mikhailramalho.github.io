@@ -150,13 +150,13 @@
 	<section id="about" aria-labelledby="about-heading">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4 col-sm-12 wow" style="padding-top: 50px;">
+				<div class="col-md-4 col-sm-12" style="padding-top: 50px;">
 					<p>
 						<picture>
 							<source type="image/avif" srcset="files/mikhail-480.avif 480w, files/mikhail-960.avif 960w" sizes="(max-width: 768px) 60vw, 20vw">
 							<source type="image/webp" srcset="files/mikhail-480.webp 480w, files/mikhail-960.webp 960w" sizes="(max-width: 768px) 60vw, 20vw">
-							<img src="files/mikhail.jpg" class="wow img-responsive" data-wow-delay="0.2s" alt="Professional headshot of Mikhail R. Gadelha" decoding="async" fetchpriority="high"
-								style="visibility: hidden; animation-delay: 0.2s; animation-name: none; margin-left: auto; margin-right: auto; display: block; width: 60%">
+						<img src="files/mikhail.jpg" class="img-responsive" alt="Professional headshot of Mikhail R. Gadelha" decoding="async" fetchpriority="high"
+							style="margin-left: auto; margin-right: auto; display: block; width: 60%">
 						</picture>
 					</p>
 
@@ -191,8 +191,7 @@
 
 				<div class="col-md-8 col-sm-12">
 					<div class="about-thumb">
-						<div class="wow section-title" data-wow-delay="0.6s"
-							style="text-align: justify; visibility: hidden; animation-delay: 0.6s; animation-name: none;">
+						<div class="section-title" style="text-align: justify;">
 							<h3 id="about-heading" style="margin-top: 25px;"><b>About me</b></h3>
 
 							<p>I'm a Software Engineer at Igalia with a PhD in Computer Science and over 10 years of experience building systems. My work focuses on program verification, compilers, and static analysis. I'm a committer to LLVM and WebKit, and actively contribute to projects like ESBMC, CBMC, and Z3.</p>
@@ -399,8 +398,7 @@
 	<footer role="contentinfo" aria-label="Site footer">
 		<div class="container">
 			<div class="row">
-				<div class="wow col-md-6 col-sm-6" data-wow-delay="0.8s"
-					style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+				<div class="col-md-6 col-sm-6">
 					<p class="copyright-text">Copyright © <span id="current-year">2022</span> - Mikhail R. Gadelha</p>
 					<p> mikhail (at) igalia (dot) com </p>
 				</div>
@@ -409,10 +407,7 @@
 	</footer>
 
 	<!-- SCRIPTS -->
-	<script src="./files/jquery.js" defer></script>
-	<script src="./files/bootstrap.min.js" defer></script>
-	<!-- Removed smoothscroll.js and Magnific Popup (unused) -->
-	<script src="./files/wow.min.js" defer></script>
+	<!-- Removed jQuery and Bootstrap JS; using vanilla JS in custom.js -->
 	<script src="./files/custom.js" defer></script>
 
 	<!-- Initialize GitHub calendar after scripts are loaded -->

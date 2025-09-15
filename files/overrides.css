@@ -57,3 +57,5 @@
 
 /* Ensure proper alignment in navbar */
 .custom-navbar .nav > li { vertical-align: middle; }
+
+/* Removed WOW.js effects; ensure default visibility */

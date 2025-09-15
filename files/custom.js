@@ -1,43 +1,42 @@
-(function ($) {
-
-  "use strict";
+(function () {
+  'use strict';
 
   // Preloader: hide on DOM ready for faster paint
-  $(function () {
-    $('.preloader').fadeOut(300);
+  document.addEventListener('DOMContentLoaded', function () {
+    var pre = document.querySelector('.preloader');
+    if (pre) pre.style.display = 'none';
   });
 
-  // Close navbar on link click (mobile)
-  $('.navbar-collapse a').on('click', function () {
-    $(".navbar-collapse").collapse('hide');
-  });
-
-  // Add subtle shadow when scrolled
-  $(window).on('scroll', function () {
-    if ($(".navbar").offset().top > 50) {
-      $(".navbar-fixed-top").addClass("top-nav-collapse");
+  // Scroll shadow on navbar
+  function updateNavShadow() {
+    var navbarFixed = document.querySelector('.navbar-fixed-top');
+    var navbar = document.querySelector('.navbar');
+    if (!navbarFixed || !navbar) return;
+    if (window.pageYOffset > 50) {
+      navbarFixed.classList.add('top-nav-collapse');
     } else {
-      $(".navbar-fixed-top").removeClass("top-nav-collapse");
+      navbarFixed.classList.remove('top-nav-collapse');
     }
-  });
+  }
+  window.addEventListener('scroll', updateNavShadow, { passive: true });
+  document.addEventListener('DOMContentLoaded', updateNavShadow);
 
   // Smooth scroll with dynamic offset (navbar height)
-  $(function () {
-    $('.custom-navbar a').off('click.smooth').on('click.smooth', function (event) {
-      var href = $(this).attr('href');
-      if (!href || href.charAt(0) !== '#') return; // external links
-      var $target = $(href);
-      if ($target.length) {
+  document.addEventListener('DOMContentLoaded', function () {
+    var links = document.querySelectorAll('.custom-navbar a');
+    links.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        var href = link.getAttribute('href');
+        if (!href || href.charAt(0) !== '#') return;
+        var target = document.querySelector(href);
+        if (!target) return;
         event.preventDefault();
-        var offset = document.querySelector('.navbar').offsetHeight || 49;
-        $('html, body').stop(true, false).animate({
-          scrollTop: $target.offset().top - offset
-        }, 300, 'swing');
-      }
+        var offset = (document.querySelector('.navbar') || { offsetHeight: 49 }).offsetHeight || 49;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      });
     });
   });
 
-  // WOW Animation js
-  new WOW({ mobile: false }).init();
-
-})(jQuery);
+  // No reveal-on-scroll; show content immediately
+})();
