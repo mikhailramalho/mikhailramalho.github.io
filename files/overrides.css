@@ -1,9 +1,16 @@
 /* Local overrides (moved from inline <style>) and small UX tweaks */
 
-/* Reduce headshot image width by ~10% (60% -> 54%) */
-#about .col-md-4 picture img {
-  width: 51% !important;
-}
+/* Reduce headshot image width and center */
+#about .col-md-4 picture img { display: block; margin: 0 auto; width: 51% !important; }
+
+/* Skip link base styles */
+.skip-link { position: absolute; top: -40px; left: 6px; background: var(--bg-primary); color: var(--text-primary); padding: 8px; text-decoration: none; z-index: 100000; border: 2px solid var(--border-color); }
+.skip-link:focus { top: 6px; }
+
+/* Theme toggle buttons */
+#theme-toggle-mobile, #theme-toggle { background: none; border: none; color: inherit; cursor: pointer; }
+#theme-toggle-mobile { padding: 10px 15px; font-size: 16px; float: right; margin-top: 5px; line-height: 20px; }
+#theme-toggle { padding: 0; margin: 15px; font-size: 12px; letter-spacing: 1px; }
 
 /* Desktop alignment tweaks for About section */
 @media (min-width: 769px) {
@@ -57,5 +64,23 @@
 
 /* Ensure proper alignment in navbar */
 .custom-navbar .nav > li { vertical-align: middle; }
+
+/* Utility spacing classes */
+.mt-25 { margin-top: 25px !important; }
+.mt-30 { margin-top: 30px !important; }
+.mb-20 { margin-bottom: 20px !important; }
+.pt-15 { padding-top: 15px !important; }
+.pb-15 { padding-bottom: 15px !important; }
+.pt-10 { padding-top: 10px !important; }
+
+/* Figure and logo helpers */
+.figure-pad { padding-top: 15px !important; padding-bottom: 15px !important; }
+.img-maxh-60 { max-height: 60px !important; }
+.img-maxh-55 { max-height: 55px !important; }
+
+/* About section tweaks */
+#about .col-md-4 { padding-top: 50px; }
+#about .section-title { text-align: justify; }
+#about-heading { margin-top: 25px; }
 
 /* Removed WOW.js effects; ensure default visibility */
