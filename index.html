@@ -189,21 +189,13 @@
 							<h3 style="margin-top: 25px;"><b>GitHub Contributions</b></h3>
 
 							<!-- GitHub Activity Calendar -->
-							<script src="./files/github-calendar.js"></script>
+							<script src="./files/github-calendar.js" defer></script>
 							<link rel="stylesheet" href="./files/github-calendar.css" />
 
 							<!-- GitHub contributions calendar container -->
 							<div class="calendar">
 								Loading the contribution calendar...
 							</div>
-
-							<script>
-								GitHubCalendar(".calendar", "mikhailramalho", {
-									responsive: true,
-									tooltips: true,
-									global_stats: false
-								});
-							</script>
 							</p>
 						</div>
 					</div>
@@ -407,6 +399,19 @@
 	<!-- Removed smoothscroll.js and Magnific Popup (unused) -->
 	<script src="./files/wow.min.js" defer></script>
 	<script src="./files/custom.js" defer></script>
+
+	<!-- Initialize GitHub calendar after scripts are loaded -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			if (window.GitHubCalendar) {
+				GitHubCalendar(".calendar", "mikhailramalho", {
+					responsive: true,
+					tooltips: true,
+					global_stats: false
+				});
+			}
+		});
+	</script>
 
 
 
