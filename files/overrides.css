@@ -1,5 +1,10 @@
 /* Local overrides (moved from inline <style>) and small UX tweaks */
 
+/* Reduce headshot image width by ~10% (60% -> 54%) */
+#about .col-md-4 picture img {
+  width: 51% !important;
+}
+
 /* Desktop alignment tweaks for About section */
 @media (min-width: 769px) {
   #about .col-md-8 { padding-right: 0; }
