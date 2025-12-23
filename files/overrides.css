@@ -75,8 +75,10 @@
 
 /* Figure and logo helpers */
 .figure-pad { padding-top: 15px !important; padding-bottom: 15px !important; }
-.img-maxh-60 { max-height: 60px !important; }
-.img-maxh-55 { max-height: 55px !important; }
+.img-maxh-60 { max-height: 60px !important; width: auto !important; }
+.img-maxh-55 { max-height: 55px !important; width: auto !important; }
+.img-maxh-45 { max-height: 45px !important; width: auto !important; }
+.img-maxh-35 { max-height: 35px !important; width: auto !important; }
 
 /* About section tweaks */
 #about .col-md-4 { padding-top: 50px; }
