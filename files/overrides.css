@@ -190,6 +190,10 @@ details {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
+[data-theme="light"] details {
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.05);
+}
 details:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 0 3px rgba(0, 0, 0, 0.1);
 }
