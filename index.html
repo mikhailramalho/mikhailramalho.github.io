@@ -46,7 +46,7 @@
 
 	<!-- main css -->
 	<link rel="stylesheet" href="./files/style.min.css">
-	<link rel="stylesheet" href="./files/overrides.min.css">
+	<link rel="stylesheet" href="./files/overrides.css">
 	<link rel="stylesheet" href="./files/github-calendar-responsive.css" />
 
 	<!-- Open Graph & Canonical -->
@@ -270,54 +270,89 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
-                        <div class="section-title mt-30">
-                            <h3 id="publications-heading"><b>Publications</b></h3>
+						<details>
+							<summary class="section-title mt-30">
+								<h3 id="publications-heading"><b>Publications</b></h3>
+							</summary>
 
-                        <div class="mt-25">
-							<h4>Talks, Technical Writing & Industry Impact</h4>
-                            <div class="mb-20">
-								<p><strong><a href="https://www.youtube.com/watch?v=cWzuFmh14X0"
-									target="_blank" rel="noopener noreferrer">Unlocking 15% More Performance: A Case Study in LLVM Optimization for RISC-V</a></strong>
-									[<a href="./files/2025-llvm.pdf" target="_blank" rel="noopener noreferrer">Slides</a>][<a href="https://blogs.igalia.com/compilers/2025/11/22/unlocking-15-more-performance-a-case-study-in-llvm-optimization-for-risc-v/" target="_blank" rel="noopener noreferrer">Blog post</a>]<br>
-								<em>RISC-V North America Summit, October 2025</em><br>
-								<small>Technical presentation into optimizing LLVM for RISC-V architecture, showcasing real-world performance improvements. Presents a comprehensive case study demonstrating how systematic compiler optimizations, code generation improvements, and targeted enhancements to LLVM's RISC-V backend can unlock significant performance gains.</small></p>
-							</div>
-                            <div class="mb-20">
-								<p><strong><a href="https://blogs.igalia.com/compilers/2025/05/05/boosting-risc-v-application-performance-an-8-month-llvm-journey/"
-									target="_blank" rel="noopener noreferrer">Boosting RISC-V Application Performance: An 8-Month LLVM Journey</a></strong><br>
-								<em>Igalia Compilers Blog, May 2025</em><br>
-								<small>Chronicles an 8-month optimization effort that delivered significant performance improvements for RISC-V applications in LLVM. It details enhanced code generation strategies, libc optimizations, and maintainership of the RISC-V libc port. Work resulted in measurable performance gains across multiple benchmark suites.</small></p>
-							</div>
-                            <div class="mb-20">
-								<p><strong><a href="https://www.youtube.com/watch?v=GytmaH64wFo"
-									target="_blank" rel="noopener noreferrer">RISC-V Support into LLVM's libc: Challenges and Solutions for 32-bit and 64-bit</a></strong>
-									[<a href="./files/slides.pdf" target="_blank" rel="noopener noreferrer">Slides</a>]<br>
-								<em>LLVM Developers' Meeting, October 2024</em><br>
-								<small>Technical presentation detailing the implementation of RISC-V support in LLVM's libc project. Addresses unique challenges in supporting both 32-bit and 64-bit RISC-V architectures, including ABI compatibility, syscall interfaces, and performance optimizations. As the RISC-V libc maintainer, presents architectural decisions and solutions for bringing full C library support to RISC-V platforms.</small></p>
-							</div>
-						</div>
+							<div class="mt-25">
+								<h4>Talks, Technical Writing & Industry Impact</h4>
+								<div class="mb-20">
+									<p><strong><a href="https://www.youtube.com/watch?v=cWzuFmh14X0" target="_blank" rel="noopener noreferrer">Unlocking 15%
+												More Performance: A Case Study in LLVM Optimization for
+												RISC-V</a></strong>
+										[<a href="./files/2025-llvm.pdf" target="_blank" rel="noopener noreferrer">Slides</a>][<a
+											href="https://blogs.igalia.com/compilers/2025/11/22/unlocking-15-more-performance-a-case-study-in-llvm-optimization-for-risc-v/"
+											target="_blank" rel="noopener noreferrer">Blog post</a>]<br>
+										<em>RISC-V North America Summit, October 2025</em><br>
+										<small>Technical presentation into optimizing LLVM for RISC-V architecture, showcasing real-world
+											performance improvements. Presents a comprehensive case study demonstrating how systematic compiler
+											optimizations, code generation improvements, and targeted enhancements to LLVM's RISC-V backend can
+											unlock significant performance gains.</small>
+										</p>
+										</div>
+										<div class="mb-20">
+									<p><strong><a
+												href="https://blogs.igalia.com/compilers/2025/05/05/boosting-risc-v-application-performance-an-8-month-llvm-journey/"
+												target="_blank" rel="noopener noreferrer">Boosting RISC-V Application Performance: An 8-Month LLVM
+												Journey</a></strong><br>
+										<em>Igalia Compilers Blog, May 2025</em><br>
+										<small>Chronicles an 8-month optimization effort that delivered significant performance improvements for
+											RISC-V applications in LLVM. It details enhanced code generation strategies, libc optimizations, and
+											maintainership of the RISC-V libc port. Work resulted in measurable performance gains across multiple
+											benchmark suites.</small>
+										</p>
+										</div>
+										<div class="mb-20">
+									<p><strong><a href="https://www.youtube.com/watch?v=GytmaH64wFo" target="_blank" rel="noopener noreferrer">RISC-V
+												Support into LLVM's libc: Challenges and Solutions for 32-bit and
+												64-bit</a></strong>
+										[<a href="./files/slides.pdf" target="_blank" rel="noopener noreferrer">Slides</a>]<br>
+										<em>LLVM Developers' Meeting, October 2024</em><br>
+										<small>Technical presentation detailing the implementation of RISC-V support in LLVM's libc project.
+											Addresses unique challenges in supporting both 32-bit and 64-bit RISC-V architectures, including ABI
+											compatibility, syscall interfaces, and performance optimizations. As the RISC-V libc maintainer,
+											presents architectural decisions and solutions for bringing full C library support to RISC-V
+											platforms.</small>
+										</p>
+										</div>
 
-                        <div class="mt-25">
-							<h4>Recent Publications</h4>
-                            <div class="mb-20">
-								<p><strong><a href="https://link.springer.com/chapter/10.1007/978-3-031-90660-2_16"
-									target="_blank" rel="noopener noreferrer">ESBMC v7.7: Efficient Concurrent Software Verification with Scheduling, Incremental SMT and Partial Order Reduction</a></strong> [<a href="./files/2025-svcomp.pdf" target="_blank" rel="noopener noreferrer">PDF</a>]<br>
-								<em>Tools and Algorithms for the Construction and Analysis of Systems (TACAS), 2025</em><br>
-								<small>Improves verification of concurrent C programs through dynamic thread scheduling, incremental SMT solving, and enhanced partial order reduction algorithms. Significantly reduces exploration of redundant states and enables faster bug detection in multi-threaded applications.</small></p>
+								<div class="mt-25">
+									<h4>Recent Publications</h4>
+									<div class="mb-20">
+										<p><strong><a href="https://link.springer.com/chapter/10.1007/978-3-031-90660-2_16" target="_blank"
+													rel="noopener noreferrer">ESBMC v7.7: Efficient Concurrent Software Verification with Scheduling,
+													Incremental SMT and Partial Order Reduction</a></strong> [<a href="./files/2025-svcomp.pdf" target="_blank"
+												rel="noopener noreferrer">PDF</a>]<br>
+											<em>Tools and Algorithms for the Construction and Analysis of Systems (TACAS), 2025</em><br>
+											<small>Improves verification of concurrent C programs through dynamic thread scheduling, incremental SMT
+												solving, and enhanced partial order reduction algorithms. Significantly reduces exploration of redundant
+												states and enables faster bug detection in multi-threaded applications.</small>
+											</p>
+											</div>
+											<div class="mb-20">
+										<p><strong><a href="https://www.sciencedirect.com/science/article/pii/S0167642325000759" target="_blank"
+													rel="noopener noreferrer">ESBMC v7.6: Enhanced model checking of C++ programs with clang
+													AST</a></strong> [<a href="./files/2025-journal.pdf" target="_blank" rel="noopener noreferrer">PDF</a>]<br>
+											<em>Science of Computer Programming, 2025</em><br>
+											<small>Introduces advanced C++ support through Clang AST integration, enabling comprehensive verification of
+												modern C++ features including templates, lambda expressions, and STL containers. Demonstrates
+												significant improvements in verification accuracy and coverage.</small>
+											</p>
+											</div>
+											<div class="mb-20">
+										<p><strong><a href="https://link.springer.com/chapter/10.1007/978-3-031-57256-2_24" target="_blank"
+													rel="noopener noreferrer">ESBMC v7.4: Harnessing the Power of Intervals</a></strong> [<a
+												href="./files/2024-svcomp.pdf" target="_blank" rel="noopener noreferrer">PDF</a>]<br>
+											<em>Tools and Algorithms for the Construction and Analysis of Systems (TACAS), 2024</em><br>
+											<small>Implements interval analysis techniques to improve precision in numeric computations and reduce false
+												positives in verification. Enhances handling of floating-point arithmetic and improves scalability for
+												complex numerical programs.</small>
+											</p>
+											</div>
+											</div>
 							</div>
-                            <div class="mb-20">
-								<p><strong><a href="https://www.sciencedirect.com/science/article/pii/S0167642325000759"
-									target="_blank" rel="noopener noreferrer">ESBMC v7.6: Enhanced model checking of C++ programs with clang AST</a></strong> [<a href="./files/2025-journal.pdf" target="_blank" rel="noopener noreferrer">PDF</a>]<br>
-								<em>Science of Computer Programming, 2025</em><br>
-								<small>Introduces advanced C++ support through Clang AST integration, enabling comprehensive verification of modern C++ features including templates, lambda expressions, and STL containers. Demonstrates significant improvements in verification accuracy and coverage.</small></p>
-							</div>
-                            <div class="mb-20">
-								<p><strong><a href="https://link.springer.com/chapter/10.1007/978-3-031-57256-2_24"
-									target="_blank" rel="noopener noreferrer">ESBMC v7.4: Harnessing the Power of Intervals</a></strong> [<a href="./files/2024-svcomp.pdf" target="_blank" rel="noopener noreferrer">PDF</a>]<br>
-								<em>Tools and Algorithms for the Construction and Analysis of Systems (TACAS), 2024</em><br>
-								<small>Implements interval analysis techniques to improve precision in numeric computations and reduce false positives in verification. Enhances handling of floating-point arithmetic and improves scalability for complex numerical programs.</small></p>
-							</div>
-						</div>
+							</details>
 
 					</div>
 				</div>
@@ -331,57 +366,102 @@
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
 					<!-- SECTION TITLE -->
-                        <div class="section-title mt-30">
-                            <h3 id="tools-heading"><b>Open Source Contributions</b></h3>
-						<!-- LLVM/Clang -->
-                        <div class="os-contribution-item">
-                            <div class="os-logo-col">
-                                <a href="https://clang.llvm.org/" target="_blank" rel="noopener noreferrer">
-                                    <picture>
-                                        <source type="image/avif" srcset="files/clang-logo.avif">
-                                        <source type="image/webp" srcset="files/clang-logo.webp">
-                                        <img src="files/clang-logo.png" loading="lazy" decoding="async" alt="LLVM Clang compiler logo" />
-                                    </picture>
-                                </a>
-                            </div>
-                            <div class="os-content-col">
-                                <h4><a href="https://clang.llvm.org/" target="_blank" rel="noopener noreferrer">LLVM/Clang</a><span style="font-size: 0.8em;"> [<a href="https://github.com/llvm/llvm-project/commits/main/?author=mikhailramalho" target="_blank" rel="noopener noreferrer">Contributions</a>]</span></h4>
-                                <p>As a committer to the LLVM project and maintainer of the RISC-V libc port, I focus on backend code generation and performance. My recent work includes extensive updates to the SpacemiT-X60 scheduling model using hardware-measured latencies and significant contributions to the RISC-V VLOptimizer (VLOPT). I also work on enhancing cost models and enabling new libc functionality for the architecture.</p>
-                            </div>
-                        </div>
+						<details>
+							<summary class="section-title mt-30">
+								<h3 id="tools-heading"><b>Open Source Contributions</b></h3>
+							</summary>
 
-                        <!-- WebKit -->
-                        <div class="os-contribution-item">
-                            <div class="os-logo-col">
-                                <a href="https://webkit.org" target="_blank" rel="noopener noreferrer">
-                                    <picture>
-                                        <source type="image/webp" srcset="files/webkit-logo.webp">
-                                        <img src="files/webkit-logo.png" loading="lazy" decoding="async" alt="WebKit browser engine logo" />
-                                    </picture>
-                                </a>
-                            </div>
-                            <div class="os-content-col">
-                                <h4><a href="https://webkit.org" target="_blank" rel="noopener noreferrer">WebKit</a> <span style="font-size: 0.8em;"> [<a href="https://github.com/WebKit/WebKit/commits/main/?author=mikhailramalho" target="_blank" rel="noopener noreferrer">Contributions</a>]</span></h4>
-                                <p>As a committer, I've contributed bug fixes, performance improvements, and new features to JavaScriptCore (JSC), WebKit's JavaScript engine. My recent work focuses on the BBQ JIT, specifically bringing WebAssembly SIMD support to 32-bit architectures (ARMv7) and optimizing code generation for shifts, rotates, and several 64-bit operations, resulting in significant code size reductions and performance gains.</p>
-                            </div>
-                        </div>
+							<div class="mt-25">
+							<!-- LLVM/Clang -->
+							<div class="os-contribution-item">
+								<div class="os-logo-col">
+									<a href="https://clang.llvm.org/" target="_blank" rel="noopener noreferrer">
+										<picture>
+											<source type="image/avif" srcset="files/clang-logo.avif">
+											<source type="image/webp" srcset="files/clang-logo.webp">
+											<img src="files/clang-logo.png" loading="lazy" decoding="async" alt="LLVM Clang compiler logo" />
+										</picture>
+									</a>
+								</div>
+								<div class="os-content-col">
+									<h4><a href="https://clang.llvm.org/" target="_blank" rel="noopener noreferrer">LLVM/Clang</a><span
+											style="font-size: 0.8em;"> [<a href="https://github.com/llvm/llvm-project/commits/main/?author=mikhailramalho"
+												target="_blank" rel="noopener noreferrer">Contributions</a>]</span></h4>
+									<p>As a committer to the LLVM project and maintainer of the RISC-V libc port, I focus on backend code generation
+										and performance. My recent work includes extensive updates to the SpacemiT-X60 scheduling model using
+										hardware-measured latencies and significant contributions to the RISC-V VLOptimizer (VLOPT). I also work on
+										enhancing cost models and enabling new libc functionality for the architecture.</p>
+									</div>
+									</div>
 
-                        <!-- ESBMC -->
-                        <div class="os-contribution-item">
-                            <div class="os-logo-col">
-                                <a href="https://esbmc.org" target="_blank" rel="noopener noreferrer">
-                                    <picture>
-                                        <source type="image/webp" srcset="files/esbmc-logo.webp">
-                                        <img src="files/esbmc-logo.png" loading="lazy" decoding="async" alt="ESBMC bounded model checker logo" />
-                                    </picture>
-                                </a>
-                            </div>
-                            <div class="os-content-col">
-                                <h4><a href="https://esbmc.org" target="_blank" rel="noopener noreferrer">ESBMC</a> <span style="font-size: 0.8em;"> [<a href="https://github.com/esbmc/esbmc/commits/master/?author=mikhailramalho" target="_blank" rel="noopener noreferrer">Contributions</a>]</span></h4>
-                                <p>As a core contributor and maintainer, I've led the development of several key features including interval analysis, incremental SMT solving, and enhanced C++ support through Clang AST integration. My work has significantly improved verification performance and expanded the tool's capabilities for concurrent software verification.</p>
-                            </div>
-                        </div>
-					</div>
+							<!-- WebKit -->
+							<div class="os-contribution-item">
+								<div class="os-logo-col">
+									<a href="https://webkit.org" target="_blank" rel="noopener noreferrer">
+										<picture>
+											<source type="image/webp" srcset="files/webkit-logo.webp">
+											<img src="files/webkit-logo.png" loading="lazy" decoding="async" alt="WebKit browser engine logo" />
+										</picture>
+									</a>
+								</div>
+								<div class="os-content-col">
+									<h4><a href="https://webkit.org" target="_blank" rel="noopener noreferrer">WebKit</a> <span style="font-size: 0.8em;">
+											[<a href="https://github.com/WebKit/WebKit/commits/main/?author=mikhailramalho" target="_blank"
+												rel="noopener noreferrer">Contributions</a>]</span></h4>
+									<p>As a committer, I've contributed bug fixes, performance improvements, and new features to JavaScriptCore
+										(JSC), WebKit's JavaScript engine. My recent work focuses on the BBQ JIT, specifically bringing WebAssembly
+										SIMD support to 32-bit architectures (ARMv7) and optimizing code generation for shifts, rotates, and several
+										64-bit operations, resulting in significant code size reductions and performance gains.</p>
+									</div>
+									</div>
+
+							<!-- ESBMC -->
+							<div class="os-contribution-item">
+								<div class="os-logo-col">
+									<a href="https://esbmc.org" target="_blank" rel="noopener noreferrer">
+										<picture>
+											<source type="image/webp" srcset="files/esbmc-logo.webp">
+											<img src="files/esbmc-logo.png" loading="lazy" decoding="async"
+												alt="ESBMC bounded model checker logo" />
+										</picture>
+									</a>
+								</div>
+								<div class="os-content-col">
+									<h4><a href="https://esbmc.org" target="_blank" rel="noopener noreferrer">ESBMC</a> <span style="font-size: 0.8em;"> [<a
+												href="https://github.com/esbmc/esbmc/commits/master/?author=mikhailramalho" target="_blank"
+												rel="noopener noreferrer">Contributions</a>]</span></h4>
+									<p>As a core contributor and maintainer, I've led the development of several key features including interval
+										analysis, incremental SMT solving, and enhanced C++ support through Clang AST integration. My work has
+										significantly improved verification performance and expanded the tool's capabilities for concurrent software
+										verification.</p>
+									</div>
+									</div>
+									</div>
+									</details>
+									</div>
+									</div>
+									</div>
+									</div>
+									</section>
+
+									<!-- BLOG SECTION -->
+									<section id="blog" aria-labelledby="blog-heading">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-12 col-sm-12">
+													<details>
+														<summary class="section-title mt-30">
+															<h3 id="blog-heading"><b>Blog</b></h3>
+														</summary>
+														<div class="mt-25">
+															<div class="blog-list-item">
+																<span class="blog-date">February 5, 2026</span>
+																<h4 class="blog-title"><a href="#">Welcome to my new blog</a></h4>
+																<p class="blog-excerpt">This is the start of my new blog section where I'll be sharing
+																	thoughts on compilers, verification, and software engineering. </p>
+															</div>
+															</div>
+										</details>
 				</div>
 			</div>
 		</div>
@@ -465,8 +545,6 @@
 		});
 	})();
 	</script>
-
-
 
 	<!-- Theme Management Script -->
 	<script>
