@@ -277,8 +277,8 @@ details[open] summary h3 {
 
 /* Content animation wrapper */
 details>div {
-    padding: 24px;
-    /* Padding matches header */
+    padding: 10px 24px 24px 24px !important;
+        /* Reduced top padding */
     animation: slideDown 0.3s ease-out;
     background-color: transparent;
     width: 100%;
@@ -300,7 +300,7 @@ details>div {
 /* Mobile adjustments for card content */
 @media (max-width: 768px) {
     details>div {
-        padding: 15px;
+        padding: 5px 15px 15px 15px !important;
         /* Reduce padding on mobile to save space */
     }
 
