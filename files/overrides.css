@@ -55,8 +55,24 @@
 }
 
 /* Mobile font sizes for section titles */
-@media (max-width: 768px) { #publications h3, #tools h3 { font-size: 24px !important; } }
-@media (max-width: 580px) { #publications h3, #tools h3 { font-size: 20px !important; letter-spacing: 1px !important; } }
+@media (max-width: 768px) {
+
+    #publications h3,
+    #tools h3,
+    #blog h3 {
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 580px) {
+
+    #publications h3,
+    #tools h3,
+    #blog h3 {
+        font-size: 20px !important;
+        letter-spacing: 1px !important;
+    }
+}
 
 /* Align Publications and Open Source sections with About section */
 @media (min-width: 769px) { #publications .section-title, #tools .section-title { padding-right: 0; margin-right: 0px; } }
@@ -281,6 +297,21 @@ details>div {
     }
 }
 
+/* Mobile adjustments for card content */
+@media (max-width: 768px) {
+    details>div {
+        padding: 15px;
+        /* Reduce padding on mobile to save space */
+    }
+
+    summary,
+    #publications summary,
+    #tools summary,
+    #blog summary {
+        padding: 15px !important;
+        /* Uniform 15px padding for perfect alignment */
+    }
+}
 /* Blog Post List Styles */
 .blog-list-item {
     padding: 20px 0;
@@ -305,6 +336,12 @@ details>div {
     font-weight: 600;
 }
 
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 18px;
+        /* Scale down for mobile */
+    }
+}
 .blog-title a {
     color: var(--text-primary);
     text-decoration: none;
