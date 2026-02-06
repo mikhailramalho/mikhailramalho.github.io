@@ -37,6 +37,13 @@
         if (!href || href.charAt(0) !== '#') return;
         var target = document.querySelector(href);
         if (!target) return;
+
+        // Open accordion if target contains one
+        var details = target.querySelector('details');
+        if (details) {
+          details.open = true;
+        }
+
         event.preventDefault();
         var offset = (document.querySelector('.navbar') || { offsetHeight: 49 }).offsetHeight || 49;
         var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
